@@ -30,11 +30,19 @@ const changePassword = async (body)=> {
     })
     return response.json() ;
 }
-
+const createServey = async (body)=> {
+    const response = await fetch ( apiUrl+"servey/createServey",{
+        method: "POST",
+        body:body,
+        headers:headers     
+    })
+    return response.json() ;
+}
 
 
 export {
     signUp,
     signIn,   
     changePassword,
+    createServey
 }

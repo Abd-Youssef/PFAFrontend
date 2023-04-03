@@ -32,14 +32,11 @@ function SignIn(params) {
     console.log(response);
     if (response.status === 200) {
       Dispatch(SetUser({ user: response.data, token: response.token }));
-      navigate("/dashboard");
+      navigate("/home");
     }
     else {
       seterror(response.message);
     }
-  };
-  const onNavigate = () => {
-    navigate("/signup");
   };
 
   return (
@@ -95,7 +92,7 @@ function SignIn(params) {
               Your <b>DiseaseDetective</b> Account
             </p>
           </div>
-            <div class="-space-y-px rounded-md shadow-sm">
+            <div class="space-y-5 rounded-md shadow-sm">
               <Input
                 className={"relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"}
                 placeholder={"Email address"}

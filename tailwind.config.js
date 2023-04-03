@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         disease: "url('/src/Assets/bg.png')",
+        homePage: "url('/src/Assets/homePage.png')",
       },
 
       colors: {

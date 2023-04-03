@@ -5,10 +5,15 @@ import {
   Route,
   Routes as ComponentRoutes,
 } from "react-router-dom";
-import Dashboard from "../Pages/Dashboard/Dashboard";
+import HeartDiseasePredictionPg1 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg1";
+import HeartDiseasePredictionPg2 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg2";
+import HeartDiseasePredictionPg3 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg3";
+import HeartDiseasePredictionPg4 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg4";
+import HeartDiseasePredictionPg5 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg5";
+import HomePage from "../Pages/HomePage/HomePage";
 import Password from "../Pages/Password/Password";
-import  SignIn  from "../Pages/SignIn/SignIn";
-import  SignUp  from "../Pages/SignUp/SignUp";
+import SignIn from "../Pages/SignIn/SignIn";
+import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./Privateroute/PrivateRoute";
 import PublicRoute from "./PublicRoute/PublicRoute";
 function Routes(props) {
@@ -18,7 +23,11 @@ function Routes(props) {
   return (
     <BrowserRouter>
       <ComponentRoutes>
-        <Route path="/" element={<PublicRoute component={<SignIn />} />} />
+        <Route path="/" element={<PublicRoute component={<HomePage />} />} />
+        <Route
+          path="/home"
+          element={<PrivateRoute component={<HomePage token={token} />} />}
+        />
         <Route
           path="/signup"
           element={<PublicRoute component={<SignUp />} />}
@@ -32,9 +41,49 @@ function Routes(props) {
           element={<PublicRoute component={<Password />} />}
         />
         <Route
-          path="/dashboard"
-          element={<PrivateRoute component={<Dashboard token={token} />} />}
+          path="/HeartDiseasePrediction"
+          element={
+            <PrivateRoute
+              component={<HeartDiseasePredictionPg1 token={token} />}
+            />
+          }
         />
+        <Route
+          path="/HeartDiseasePrediction/1"
+          element={
+            <PrivateRoute
+              component={<HeartDiseasePredictionPg2 token={token} />}
+            />
+          }
+        />
+        <Route
+          path="/HeartDiseasePrediction/2"
+          element={
+            <PrivateRoute
+              component={<HeartDiseasePredictionPg3 token={token} />}
+            />
+          }
+        />
+        <Route
+          path="/HeartDiseasePrediction/3"
+          element={
+            <PrivateRoute
+              component={<HeartDiseasePredictionPg4 token={token} />}
+            />
+          }
+        />
+         <Route
+          path="/HeartDiseasePrediction/Results"
+          element={
+            <PrivateRoute
+              component={<HeartDiseasePredictionPg5 token={token} />}
+            />
+          }
+        />
+        {/* <Route
+          path="/dashboard"
+          element={<PrivateRoute component={<HomePage token={token} />} />}
+        /> */}
       </ComponentRoutes>
     </BrowserRouter>
   );

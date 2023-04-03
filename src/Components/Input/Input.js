@@ -7,20 +7,37 @@ export default function Input(props) {
     className.push(props.className);
   }
   return (
-    <div className={"my-5"}>
-      {props.label && <label className="">{props.label}</label>}
-      <input
-        className={className.join(" ")}
-        type={props.type}
-        value={props.value}
-        name={props.name}
-        id={props.id}
-        autoComplete={props.autocomplete}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-        required
-      />
-    </div>
+    <>
+      {props.label ? (
+        <div className={"my-5"}>
+          {" "}
+          <label className="my-5">{props.label}</label>
+          <input
+            className={className.join(" ")}
+            type={props.type}
+            value={props.value}
+            name={props.name}
+            id={props.id}
+            autoComplete={props.autocomplete}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            required
+          />
+        </div>
+      ) : (
+          <input
+            className={className.join(" ")}
+            type={props.type}
+            value={props.value}
+            name={props.name}
+            id={props.id}
+            autoComplete={props.autocomplete}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            required
+          />
+      )}
+    </>
   );
 }
 Input.defaultProps = {

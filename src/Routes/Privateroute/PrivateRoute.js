@@ -9,15 +9,12 @@ function PrivateRoute(props) {
   if (token) {
     return (
       <>
-        <NavBar />
-        <div className="page-content m-16 ">
           {props.role === user.role || !props.role ? props.component : null}
-        </div>
         <Footer />
       </>
     );
   } else {
-    return <Navigate to={"/signin"} replace />;
+    return <Navigate to={"/"} replace />;
   }
 }
 

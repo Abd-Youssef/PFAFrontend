@@ -3,12 +3,13 @@ import logger from "redux-logger-simple";
 import { persistStore, persistReducer } from "redux-persist";
 import storageLocal from "redux-persist/lib/storage";
 import authReducer from "./Reducers/authReducer";
+import HeartDiseasePredictionReducer from "./Reducers/HeartDiseasePredictionReducer";
 
 const persistConfig = {
   key: "root",
   timeout: null,
   storage: storageLocal,
-  whitelist: ["auth"],
+  whitelist: ["auth","formHeart"],
   blacklist: [],
 };
 const composeEnhancers =
@@ -18,6 +19,7 @@ const composeEnhancers =
 const enhancer = composeEnhancers(applyMiddleware(logger));
 const reducers = combineReducers({
     auth : authReducer,
+    formHeart: HeartDiseasePredictionReducer,
 });
 const persistedReducers = persistReducer(persistConfig, reducers);
 const STORE = createStore(persistedReducers, enhancer);
