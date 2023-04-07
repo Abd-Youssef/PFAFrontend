@@ -34,15 +34,42 @@ const createServey = async (body)=> {
     const response = await fetch ( apiUrl+"servey/createServey",{
         method: "POST",
         body:body,
-        headers:headers     
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }   
     })
     return response.json() ;
 }
-
+const getAllServey = async (id)=> {
+    const response = await fetch ( apiUrl+"servey/getServeyForeachUser/"+id,{
+        method: "GET",
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+  
+}
+const sendMail = async (body)=> {
+    const response = await fetch ( apiUrl+"sendmail",{
+        method: "POST",
+        body:body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+  
+}
 
 export {
     signUp,
     signIn,   
     changePassword,
-    createServey
+    createServey,
+    getAllServey,
+    sendMail
 }

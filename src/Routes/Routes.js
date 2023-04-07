@@ -12,10 +12,12 @@ import HeartDiseasePredictionPg4 from "../Pages/HeartDiseasePrediction/HeartDise
 import HeartDiseasePredictionPg5 from "../Pages/HeartDiseasePrediction/HeartDiseasePredictionPg5";
 import HomePage from "../Pages/HomePage/HomePage";
 import Password from "../Pages/Password/Password";
+import ProfilePage from "../Pages/ProfilePage/ProfilePage";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./Privateroute/PrivateRoute";
 import PublicRoute from "./PublicRoute/PublicRoute";
+import DoctorsPage from "../Pages/DoctorsPage/DoctorsPage";
 function Routes(props) {
   const [token, setToken] = useState(null);
   const auth = useSelector((state) => state.auth);
@@ -80,10 +82,22 @@ function Routes(props) {
             />
           }
         />
-        {/* <Route
-          path="/dashboard"
-          element={<PrivateRoute component={<HomePage token={token} />} />}
-        /> */}
+        <Route
+          path="/profile/:id"
+          element={
+            <PrivateRoute
+              component={<ProfilePage token={token} />}
+            />
+          }
+        />
+        <Route
+          path="/doctors"
+          element={
+            <PrivateRoute
+              component={<DoctorsPage token={token} />}
+            />
+          }
+        />
       </ComponentRoutes>
     </BrowserRouter>
   );

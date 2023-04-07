@@ -7,9 +7,25 @@ export default function Textarea(props) {
     className.push(props.className);
   }
   return (
-    <div className="py-0 width-100 px-16 py-16">
-      {props.label && <label className="m-2 form-label ">{props.label}</label>}
-      <div className={"flex mx-16 "}>
+    <>
+      {props.label ? (
+        <div className={"my-5"}>
+          {" "}
+          <label className="my-5">{props.label}</label>
+          <textarea
+            className={className.join(" ")}
+            type={props.type}
+            value={props.value}
+            name={props.name}
+            id={props.id}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            required="required"
+            rows={props.rows}
+            cols={props.cols}
+          />
+        </div>
+      ) : (
         <textarea
           className={className.join(" ")}
           type={props.type}
@@ -22,8 +38,8 @@ export default function Textarea(props) {
           rows={props.rows}
           cols={props.cols}
         />
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 Textarea.defaultProps = {

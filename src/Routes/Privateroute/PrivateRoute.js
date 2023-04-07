@@ -8,10 +8,10 @@ function PrivateRoute(props) {
   const user = useSelector((state) => state.auth.user);
   if (token) {
     return (
-      <>
+      <div>
           {props.role === user.role || !props.role ? props.component : null}
-        <Footer />
-      </>
+          <Footer email={user.email} />
+      </div>
     );
   } else {
     return <Navigate to={"/"} replace />;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import Button from "../../Components/Button/Button";
 import NavBar from "../../Components/NavBar/NavBar";
@@ -6,6 +6,7 @@ import HeartDiseasePredictionPng from "../../Assets/HeartDiseasePrediction.png";
 import DiabetesPredictionPng from "../../Assets/DiabetesPrediction.png";
 import doctorPng from "../../Assets/doctor.png";
 import { Link } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
 function HomePage() {
   const auth = useSelector((state) => state.auth);
@@ -16,9 +17,46 @@ function HomePage() {
       behavior: "smooth",
     });
   };
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Listen to the scroll event and update the state accordingly
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsVisible(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="h-full w-auto bg-white">
       <div className=" bg-cover bg-center bg-homePage h-screen  bg-blue-1">
+      {isVisible && (
+        <button
+        className="fixed bottom-5 right-5 bg-blue-1 text-white py-3 px-3 rounded-full shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out"
+        onClick={handleClick}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
+      )}
         <NavBar />
         <div className=" w-2/5 mx-36 my-20">
           <h1 className=" text-7xl  font-normal leading-normal text-white pb-6 ">
@@ -208,6 +246,7 @@ function HomePage() {
           </div>
         </div>
       </div>
+      {!auth.token && <Footer />}
     </div>
   );
 }

@@ -40,22 +40,25 @@ export default function NavBar() {
             About
           </Link>
           <Link
-            href="#"
+            to="/doctors"
             className="text-lg font-semibold leading-6 text-white hover:text-blue-200"
           >
-            Contact
+            Doctors
           </Link>
         </div>
         {auth.token ? (
           <div className="flex items-center lg:flex-1 lg:justify-end lg:gap-x-12">
-            <div className="flex items-center justify-end lg:gap-x-2">
+            <Link
+              className="flex items-center justify-end lg:gap-x-2"
+              to={`/profile/${auth.user._id}`}
+            >
               <p className=" text-lg font-bold leading-6 text-white cursor-default">
                 Hi,
               </p>
               <p className=" text-lg font-bold leading-6 text-white hover:text-blue-200 cursor-pointer">
                 {auth.user.first_name}
               </p>
-            </div>
+            </Link>
             <Link to={"/"}>
               <Button
                 name={"Log Out"}

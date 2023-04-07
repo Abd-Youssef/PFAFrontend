@@ -43,7 +43,7 @@ function HeartDiseasePredictionPg2() {
     }
   };
   return (
-    <div className="bg-cover bg-center bg-homePage h-full w-full bg-blue-1">
+    <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
       <div className="flex justify-center w-full   bg-blue-50">
         <div className="flex justify-between w-3/5 h-full m-20 ">
