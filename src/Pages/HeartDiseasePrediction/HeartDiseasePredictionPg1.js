@@ -7,32 +7,39 @@ import HeartDiseasePredictionPng from "../../Assets/HeartDiseasePrediction.png";
 function HeartDiseasePredictionPg1() {
   const navigate = useNavigate();
   return (
-    <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
+    <div className="bg-cover bg-center bg-homePage   w-full bg-blue-1">
       <NavBar />
-      <div className="flex justify-center w-full   bg-blue-50">
-        <div className="flex justify-between w-3/5  m-20 ">
-          <div className="  w-1/5  ">
-            <ul className="ml-6 ">
-              <li className="py-2 pl-3 text-lg font-semibold border-l-4 border-green-900 text-blue-1 cursor-default">
+      <div className="md:flex justify-center w-full   bg-blue-50">
+        <div className="p-6  md:flex justify-between md:w-3/5  md:m-20 ">
+          <div className=" md:w-1/5  ">
+            <ul className="flex pb-6  md:flex-col md:ml-6 ">
+              <li className=" p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-900 text-blue-1 cursor-default">
                 Introduction
               </li>
-              <li className="py-2 pl-3 text-lg  font-normal border-l-4 text-gray-400 cursor-not-allowed">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 text-gray-400 cursor-not-allowed">
                 Patient
               </li>
-              <li className="py-2 pl-3 text-lg  font-normal border-l-4 text-gray-400 cursor-not-allowed">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 text-gray-400 cursor-not-allowed">
                 Questions
               </li>
-              <li className="py-2 pl-3 text-lg  font-normal border-l-4 text-gray-400 cursor-not-allowed">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 text-gray-400 cursor-not-allowed">
                 Results
               </li>
             </ul>
           </div>
-          <div className="flex flex-col w-3/4  justify-between shadow-2xl bg-white">
-            <div className="flex w-full  p-10 justify-between">
-              <div className=" w-1/2">
-                <h1 className=" text-2xl  font-semibold leading-normal text-blue-1 pb-6 ">
-                  Check your Health
-                </h1>
+          <div className="flex flex-col md:w-3/4  md:justify-between shadow-2xl bg-white">
+            <h1 className="flex text-3xl justify-center font-semibold leading-normal text-blue-1 p-4 md:p-10 pb-0">
+              Check your Health 
+            </h1>
+            <div className="md:flex w-full p-6 md:p-10 md:pt-0 justify-between">
+              <div className="p-10 pt-0 md:flex md:w-2/5 md:p-0 ">
+                <img
+                  class="mx-auto  "
+                  src={HeartDiseasePredictionPng}
+                  alt="Your Company"
+                />
+              </div>
+              <div className=" md:w-1/2">
                 <p className=" text-lg font-normal text-justify text-blue-1 pb-4">
                   Welcome to <b>Heart Disease </b> symptom assessment, your
                   personal disease prediction website. The information you give
@@ -43,22 +50,14 @@ function HeartDiseasePredictionPg1() {
                   year risk of coronary heart disease CHD
                 </p>
               </div>
-              <div className="flex w-2/5   ">
-                <img
-                  class="mx-auto  "
-                  src={HeartDiseasePredictionPng}
-                  alt="Your Company"
-                />
-              </div>
             </div>
             <div className="flex justify-end w-full items-center px-10 pb-8 ">
-              
               <Link
                 to="1"
                 class="border-2  rounded-md py-2 px-5 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 "
               >
                 Next
-              </Link> 
+              </Link>
             </div>
           </div>
         </div>

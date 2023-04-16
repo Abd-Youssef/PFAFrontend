@@ -40,26 +40,26 @@ function SignIn(params) {
   };
 
   return (
-    <div className="flex w-full h-full bg-disease bg-blue-1 ">
-      <div class="flex w-1/2 min-h-full items-center justify-center py-12 sm:px-6 lg:px-24 ">
+    <div className="md:flex w-full h-full bg-disease bg-blue-1 md:px-6">
+      <div class="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
         <div class="w-full  space-y-8 ">
           <div>
             <img
-              class="mx-auto w-full h-auto"
+              class="mx-auto w-4/5 md:w-full h-auto"
               src={logoPng}
               alt="Your Company"
             />
-            <p class="mt-5  text-center text-base text-white">
+            <p class="mt-5 hidden md:block text-center text-base text-white">
               “Declare the past, diagnose the present, foretell the future.” ―
               Hippocrates
             </p>
           </div>
         </div>
       </div>
-      <div class="flex w-1/2 h-full min-h-full items-center justify-center py-12  sm:px-6 lg:px-24">
-        <div class="w-full max-w-2xl h-4/5 space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
+      <div class="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
+        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
         {error ? (
-                <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
+                <div class="mx-auto  flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100   ">
                   <svg
                     class="h-8 w-8 text-red-600 "
                     fill="none"
@@ -110,21 +110,8 @@ function SignIn(params) {
               />
             </div>
 
-            <div class="flex items-center justify-between">
-              <div class="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  class="h-4 w-4 rounded border-gray-300 text-green-1 focus:ring-green-1"
-                />
-                <label
-                  for="remember-me"
-                  class="ml-2 block text-sm text-gray-900"
-                >
-                  Remember me
-                </label>
-              </div>
+            <div class="flex items-center justify-start">
+              
 
               <div class="text-sm">
                 <Link
@@ -146,7 +133,7 @@ function SignIn(params) {
                 Don't have an account yet ?
                 <Link
                   to="/signup"
-                  class="font-medium text-green-1 hover:text-green-500"
+                  class="font-medium px-8 text-green-1 hover:text-green-500"
                 >
                   Sign up
                 </Link>

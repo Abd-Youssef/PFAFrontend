@@ -41,29 +41,29 @@ function HeartDiseasePredictionPg3() {
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
-      <div className="flex justify-center w-full bg-blue-50">
-        <div className="flex justify-between w-3/5 m-20 ">
-          <div className="  w-1/5  ">
-          <ul className="flex flex-col ml-6 ">
-              <Link className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+      <div className="md:flex justify-center w-full py-5 md:py-0 bg-blue-50">
+        <div className="p-6 md:flex justify-between md:w-3/5  md:m-20 ">
+          <div className=" md:w-1/5  ">
+          <ul className="flex pb-6  md:flex-col md:ml-6 ">
+              <Link className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
               to="/HeartDiseasePrediction">
                 Introduction
               </Link>
-              <Link className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+              <Link className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
               to="/HeartDiseasePrediction/1">
                 Patient
               </Link>
-              <Link className="py-2 pl-3 text-lg font-semibold border-l-4 border-green-900 text-blue-1 cursor-pointer"
+              <Link className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-900 text-blue-1 cursor-pointer"
               to="/HeartDiseasePrediction/3">
                 Questions
               </Link>
-              <li className="py-2 pl-3 text-lg  font-normal border-l-4 text-gray-400 cursor-not-allowed">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 text-gray-400 cursor-not-allowed">
                 Results
               </li>
             </ul>
           </div>
-          <div className="flex flex-col w-3/4 h-full justify-between shadow-2xl  bg-white">
-            <div className=" w-full pt-8 ">
+          <div className="flex flex-col md:w-3/4 my-8 md:my-0 md:justify-between shadow-2xl bg-white">
+            <div className=" w-full md:pt-8 ">
               <ErrorNav message={error} />
             </div>
             
@@ -75,8 +75,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.diabetes && state.diabetes == 1
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4  md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
                   for="smookerYes"
                 >
@@ -98,8 +98,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.diabetes && state.diabetes == 0
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12  text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12  text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
                   for="diabetesNo"
                 >
@@ -129,8 +129,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.prevalentStroke && state.prevalentStroke == 1
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
                   for="prevalentStrokeYes"
                 >
@@ -152,8 +152,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.prevalentStroke && state.prevalentStroke == 0
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
                   for="prevalentStrokeNo"
                 >
@@ -183,8 +183,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.prevalentHyp && state.prevalentHyp == 1
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
                   for="prevalentHypYes"
                 >
@@ -206,8 +206,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.prevalentHyp && state.prevalentHyp == 0
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
                   for="prevalentHypNo"
                 >
@@ -237,8 +237,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.BPMeds && state.BPMeds == 1
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
                   for="BPMedsYes"
                 >
@@ -260,8 +260,8 @@ function HeartDiseasePredictionPg3() {
                 <div
                   className={
                     state.BPMeds && state.BPMeds == 0
-                      ? "flex rounded-lg w-1/4 h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
-                      : "flex rounded-lg w-1/4 h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
+                      ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
+                      : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
                   for="BPMedsNo"
                 >

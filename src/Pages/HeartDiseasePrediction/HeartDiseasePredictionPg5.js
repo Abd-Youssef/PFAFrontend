@@ -20,7 +20,6 @@ function HeartDiseasePredictionPg5() {
         userid: auth.user._id,
         sexe: parseInt(form.data["sex"]),
         age: parseInt(form.data["age"]),
-        // education: 2,
         cigarettes_per_day: parseInt(form.data["nbCigerette"]),
         blood_pressure_meds: parseInt(form.data["BPMeds"]),
         stroke_prevalence: parseInt(form.data["prevalentStroke"]),
@@ -44,62 +43,62 @@ function HeartDiseasePredictionPg5() {
   };
   const shouldLog = useRef(true);
   useEffect(() => {
-    if (shouldLog.current) {
-      shouldLog.current = false;
-      if (
-        form.data["age"] &&
-        form.data["sex"] &&
-        form.data["smooker"] &&
-        form.data["nbCigerette"] &&
-        form.data["diabetes"] &&
-        form.data["prevalentStroke"] &&
-        form.data["BPMeds"] &&
-        form.data["prevalentHyp"] &&
-        form.data["totChol"] &&
-        form.data["sysBP"] &&
-        form.data["BMI"] &&
-        form.data["heartRate"] &&
-        form.data["glucose"]
-      ) {
-        onSubmit();
-      } else {
-        navigate("/HeartDiseasePrediction");
-      }
-  }
+      if (shouldLog.current) {
+        shouldLog.current = false;
+        if (
+          form.data["age"] &&
+          form.data["sex"] &&
+          form.data["smooker"] &&
+          form.data["nbCigerette"] &&
+          form.data["diabetes"] &&
+          form.data["prevalentStroke"] &&
+          form.data["BPMeds"] &&
+          form.data["prevalentHyp"] &&
+          form.data["totChol"] &&
+          form.data["sysBP"] &&
+          form.data["BMI"] &&
+          form.data["heartRate"] &&
+          form.data["glucose"]
+        ) {
+          onSubmit();
+        } else {
+          navigate("/HeartDiseasePrediction");
+        }
+    }
   }, []);
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
-      <div className="flex justify-center w-full h-full  bg-blue-50">
-        <div className="flex justify-between w-3/5  m-20 ">
-          <div className="  w-1/5  ">
-            <ul className="flex flex-col ml-6 ">
+      <div className="md:flex justify-center w-full py-5 md:py-0 bg-blue-50">
+        <div className="p-6 md:flex justify-between md:w-3/5  md:m-20 ">
+          <div className=" md:w-1/5  ">
+          <ul className="flex pb-6  md:flex-col md:ml-6 ">
               <Link
-                className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction"
               >
                 Introduction
               </Link>
               <Link
-                className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction/1"
               >
                 Patient
               </Link>
               <Link
-                className="py-2 pl-3 text-lg font-semibold border-l-4 border-green-700 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction/2"
               >
                 Questions
               </Link>
-              <li className="py-2 pl-3 text-lg font-semibold border-l-4 border-green-900 text-blue-1 cursor-default">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-900 text-blue-1 cursor-default">
                 Results
               </li>
             </ul>
           </div>
-          <div className=" flex items-center justify-center w-3/4 h-4/5 shadow-2xl bg-white">
+          <div className="flex flex-col md:w-3/4 md:my-0 md:justify-between shadow-2xl bg-white">
             {isLoading ? (
-              <div className="flex flex-col w-full  items-center justify-center overflow-hidden text-center p-8  ">
+              <div className="flex flex-col w-full p-32 items-center justify-center overflow-hidden text-center   ">
                 <svg
                   aria-hidden="true"
                   class="w-16 h-16  justify-center text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -169,9 +168,9 @@ function HeartDiseasePredictionPg5() {
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full  items-center justify-center overflow-hidden text-center p-8  ">
+                  <div className="w-full  items-center justify-center overflow-hidden text-center md:p-8  ">
                     <div className="flex justify-center pb-3">
-                      <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-14 sm:w-14">
+                      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-14 sm:w-14">
                         <svg
                           className="h-8 w-8 text-red-600 rou "
                           fill="none"
@@ -198,23 +197,46 @@ function HeartDiseasePredictionPg5() {
                       years. We recommend that you speak with your healthcare
                       provider to discuss strategies for reducing your risk
                     </p>
-                    <div className="flex justify-start py-6">
+                    <div className="flex justify-between py-6">
                       <Link
                         to="/"
                         className="flex items-center text-xl font-semibold leading-6 p-2 rounded-md  text-blue-1 hover:bg-blue-100 hover:ring-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-8 hover:text-blue-700"
-                          viewBox="0 0 48 48"
-                          role="img"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="m28 12 2.828 2.828L21.656 24l9.172 9.172L28 36 16 24zm0 0"
-                          ></path>
+                          <path d="M19 12H5M12 19l-7-7 7-7" />
                         </svg>
-                        Home Page
+                        <p className="text-xl font-semibold leading-6 pl-3  rounded-md  text-blue-1">
+                          Home Page
+                        </p>
+                      </Link>
+                      <Link
+                        to="/doctors"
+                        className="flex items-center text-xl font-semibold leading-6 p-2  rounded-md  text-blue-1 hover:bg-blue-100 hover:ring-2"
+                      >
+                        <p className="text-xl font-semibold leading-6 pr-3  rounded-md  text-blue-1">
+                          Contact Doctors
+                        </p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                       </Link>
                     </div>
                   </div>

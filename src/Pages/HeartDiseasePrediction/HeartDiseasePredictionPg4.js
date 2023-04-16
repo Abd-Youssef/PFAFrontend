@@ -47,35 +47,35 @@ function HeartDiseasePredictionPg3() {
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
-      <div className="flex justify-center w-full bg-blue-50">
-        <div className="flex justify-between w-3/5 m-20 ">
-          <div className=" w-1/5  ">
-            <ul className="flex flex-col ml-6 ">
+      <div className="md:flex justify-center w-full py-5 md:py-0 bg-blue-50">
+        <div className="p-6 md:flex justify-between md:w-3/5  md:m-20 ">
+          <div className=" md:w-1/5  ">
+          <ul className="flex pb-6  md:flex-col md:ml-6 ">
               <Link
-                className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction"
               >
                 Introduction
               </Link>
               <Link
-                className="py-2 pl-3 text-lg font-normal border-l-4 border-green-700 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction/1"
               >
                 Patient
               </Link>
               <Link
-                className="py-2 pl-3 text-lg font-semibold border-l-4 border-green-900 text-blue-1 cursor-pointer"
+                className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 border-green-900 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction/2"
               >
                 Questions
               </Link>
-              <li className="py-2 pl-3 text-lg  font-normal border-l-4 text-gray-400 cursor-not-allowed">
+              <li className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4  md:border-b-0 text-gray-400 cursor-not-allowed">
                 Results
               </li>
             </ul>
           </div>
-          <div className="flex flex-col w-3/4 h-full shadow-2xl  bg-white">
-            <div className=" w-full pt-8 ">
+          <div className="flex flex-col md:w-3/4 md:my-0 md:justify-between shadow-2xl bg-white">
+            <div className="pt-4 w-full md:pt-8 ">
               <ErrorNav message={error} />
             </div>
 
@@ -83,9 +83,9 @@ function HeartDiseasePredictionPg3() {
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
                 Total cholesterol level :
               </h1>
-              <div className="flex justify-evenly w-2/5   ">
+              <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
-                  className="rounded-md shadow-lg w-2/3 h-full text-center text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
+                  className="flex rounded-md shadow-lg w-2/3 text-center  text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
                   onChange={(e) => onChange(e, "totChol")}
                   value={state.totChol}
                   type={"number"}
@@ -97,9 +97,9 @@ function HeartDiseasePredictionPg3() {
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
                 Systolic blood pressure :
               </h1>
-              <div className="flex justify-evenly w-2/5   ">
+              <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
-                  className="rounded-md shadow-lg w-2/3 h-full text-center text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
+                  className="flex rounded-md shadow-lg w-2/3 text-center  text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
                   onChange={(e) => onChange(e, "sysBP")}
                   value={state.sysBP}
                   type={"number"}
@@ -111,9 +111,9 @@ function HeartDiseasePredictionPg3() {
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
                 Body Mass Index(BMI) :
               </h1>
-              <div className="flex justify-evenly w-2/5   ">
+              <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
-                  className="rounded-md shadow-lg w-2/3 h-full text-center text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
+                  className="flex rounded-md shadow-lg w-2/3 text-center  text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
                   onChange={(e) => onChange(e, "BMI")}
                   value={state.BMI}
                   type={"number"}
@@ -125,9 +125,9 @@ function HeartDiseasePredictionPg3() {
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
                 Heart Rate :
               </h1>
-              <div className="flex justify-evenly w-2/5   ">
+              <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
-                  className="rounded-md shadow-lg w-2/3 h-full text-center text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
+                  className="flex rounded-md shadow-lg w-2/3 text-center  text-xl text-semibold text-gray-400 ring-2 ring-gray-300 focus:text-black"
                   onChange={(e) => onChange(e, "heartRate")}
                   value={state.heartRate}
                   type={"number"}

@@ -64,12 +64,71 @@ const sendMail = async (body)=> {
     return response.json() ;
   
 }
-
+const getDoctorsSpecialities  = async ()=> {
+    const response = await fetch ( apiUrl+"doctor/getDoctorsSpecialities",{
+        method: "GET",
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+  
+}
+const getDoctors  = async ()=> {
+    const response = await fetch ( apiUrl+"doctor/getDoctors",{
+        method: "GET",
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+  
+}
+const deleteDoctor = async (id)=> {
+    const response = await fetch ( apiUrl+"doctor/deleteDoctor/"+id,{
+        method: "GET",
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+  
+}
+const addDoctor= async (body)=>{
+    const response = await fetch( apiUrl+"doctor/addDoctor", {
+        method: "POST",
+        body: body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+      })
+        return response.json();
+}
+const updateDoctor = async (id,body)=> {
+    const response = await fetch ( apiUrl+"doctor/updateDoctor/"+id,{
+        method: "PUT",
+        body:body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+    })
+    return response.json() ;
+}
 export {
     signUp,
     signIn,   
     changePassword,
     createServey,
     getAllServey,
-    sendMail
+    sendMail,
+    getDoctorsSpecialities,
+    getDoctors,
+    deleteDoctor,
+    addDoctor,
+    updateDoctor,
 }

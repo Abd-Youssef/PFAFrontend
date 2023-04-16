@@ -17,20 +17,65 @@ export default function Footer(props) {
     });
   };
   const onSubmit = async () => {
-    const response = await sendMail(
-      JSON.stringify({
-        email: props.email,
-        header: state.header,
-        mail: state.mail,
-      })
-    );
-    console.log(response);
-    if (response.status === 200) {
-    } else {
+    if (state.header && state.mail) {
+      const response = await sendMail(
+        JSON.stringify({
+          email: props.email,
+          header: state.header,
+          mail: state.mail,
+        })
+      );
+      console.log(response);
+      if (response.status === 200) {
+        setPopUp(true);
+      } else {
+      }
     }
   };
+  const [PopUp, setPopUp] = useState(false);
   return (
     <footer className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
+      {PopUp && (
+        <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+          <div className=" flex relative  items-center justify-center  text-center  min-h-screen">
+            <div className="bg-white w-1/4  rounded-lg overflow-hidden shadow-xl p-4">
+              <div className="flex justify-center ">
+                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">
+                <svg
+                    className="h-8 w-8 text-green-600 "
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p className="py-6 text-xl justify-center">
+                <b>The mail was sent successfully! </b>
+              </p>
+              <div className="flex  justify-evenly">
+                <Button
+                  onClick={() => {
+                    setPopUp(false);
+                  }}
+                  name={"OK"}
+                  className="group relative flex w-28 justify-center rounded-md bg-gray-400 py-2 px-3 text-sm font-bold text-white hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-450"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
@@ -60,7 +105,7 @@ export default function Footer(props) {
               <div className="w-full flex justify-end">
                 <Button
                   onClick={onSubmit}
-                  name={"Sign In"}
+                  name={"Send Mail"}
                   className="group relative flex w-1/3 justify-center rounded-sm bg-green-1 py-2 px-3 text-sm font-semibold text-white hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-450"
                 />
               </div>

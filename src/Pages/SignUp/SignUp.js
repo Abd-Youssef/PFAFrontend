@@ -40,9 +40,8 @@ function SignUp() {
       navigate("/signin");
     }
     if (response.status === 400) {
-      seterror("Remplir tous les champs");
-    }
-    else  {
+      seterror("Fill in all the fields");
+    } else {
       seterror(response.message);
     }
   };
@@ -51,50 +50,50 @@ function SignUp() {
   };
 
   return (
-    <div className="flex w-full h-full bg-disease bg-blue-1 ">
-      <div class="flex w-1/2 min-h-full items-center justify-center py-12 sm:px-6 lg:px-24 ">
+    <div className="md:flex w-full h-full bg-disease bg-blue-1 md:px-6">
+      <div class="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
         <div class="w-full  space-y-8 ">
           <div>
             <img
-              class="mx-auto w-full h-auto"
+              class="mx-auto w-4/5 md:w-full h-auto"
               src={logoPng}
               alt="Your Company"
             />
-            <p class="mt-5  text-center text-base text-white">
+            <p class="mt-5 hidden md:block text-center text-base text-white">
               “Declare the past, diagnose the present, foretell the future.” ―
               Hippocrates
             </p>
           </div>
         </div>
       </div>
-      <div class="flex w-1/2 h-full min-h-full items-center justify-center py-12  sm:px-6 lg:px-24">
-        <div class="w-full max-w-2xl h-full space-y-4 py-12 px-12 rounded-3xl bg-white shadow">
-            {error ? (
-                <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
-                  <svg
-                    class="h-8 w-8 text-red-600 "
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                    />
-                  </svg>
-                  <h3
-                    class="text-base font-semibold leading-6 text-gray-900 px-5"
-                    id="modal-title"
-                  >
-                    {error}
-                  </h3>
-                </div>
-            ) : (
-              <></>
-            )}
+      <div class="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
+        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
+          {error ? (
+            <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
+              <svg
+                class="h-8 w-8 text-red-600 "
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+              <h3
+                class="text-base font-semibold leading-6 text-gray-900 px-5"
+                id="modal-title"
+              >
+                {error}
+              </h3>
+            </div>
+          ) : (
+            <></>
+          )}
           <div>
             <h2 class=" text-center text-3xl font-bold tracking-tight text-gray-900">
               Sign up
@@ -103,7 +102,7 @@ function SignUp() {
               Your <b>DiseaseDetective</b> Account
             </p>
           </div>
-          <div class="space-y-3">
+          <div class="w-64 space-y-3 md:w-full">
             <Input
               className={
                 "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
@@ -121,7 +120,7 @@ function SignUp() {
               value={state.last_name}
             />
             <Input
-            type={"email"}
+              type={"email"}
               className={
                 "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
               }
@@ -146,11 +145,10 @@ function SignUp() {
               autocomplete={"current-password"}
               onChange={(e) => onChange(e, "password_confirmation")}
               value={state.password_confirmation}
-              
-              className={ state.password_confirmation == state.password ?  
-                "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
-                :"relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
-                
+              className={
+                state.password_confirmation == state.password
+                  ? "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
+                  : "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
               }
             />
           </div>
@@ -164,7 +162,7 @@ function SignUp() {
               Already have an account ?
               <Link
                 to="/signin"
-                class="font-medium text-green-1 hover:text-green-500"
+                class="font-medium px-8 text-green-1 hover:text-green-500"
               >
                 Sign in
               </Link>
@@ -175,4 +173,4 @@ function SignUp() {
     </div>
   );
 }
-export default SignUp ;
+export default SignUp;

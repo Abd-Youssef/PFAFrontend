@@ -8,7 +8,7 @@ function DropDown(props) {
         className="flex w-full justify-between items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className=" text-xl font-normal text-justify  text-blue-1 ">
+        <p className=" md:text-xl font-normal md:text-justify  text-blue-1 ">
           {new Date(props.servey.date).toLocaleString("en-US", {
             hour: "numeric",
             minute: "numeric",
@@ -17,12 +17,12 @@ function DropDown(props) {
             year: "numeric",
           })}
         </p>
-        <div className=" text-xl font-normal text-justify  text-blue-1 ">
+        <div className=" md:text-xl font-normal text-justify  text-blue-1 ">
           {props.servey.result == 0 ? (
-                    <div className="flex justify-center items-center pb-3">
-                      <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">
+                    <div className="flex justify-center items-center md:pb-3">
+                      <div className="mx-auto flex h-8 w-8 md:h-12 md:w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">
                         <svg
-                          className="h-8 w-8 text-green-600 "
+                          className="h-6 md:h-8 md:w-8 text-green-600 "
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
@@ -37,13 +37,13 @@ function DropDown(props) {
                           />
                         </svg>
                       </div>
-                      <p className="p-3 text-xl font-normal text-justify  text-blue-1 "> Good Health</p>
+                      <p className="hidden md:block p-3 md:text-xl font-normal text-justify  text-blue-1 "> Good Health</p>
                     </div>
                 ) : (
-                    <div className="flex justify-center items-center pb-3">
-                      <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-14 sm:w-14">
+                    <div className="flex justify-center items-center md:pb-3">
+                      <div className="mx-auto flex h-8 w-8 md:h-12 md:w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-14 sm:w-14">
                         <svg
-                          className="h-8 w-8 text-red-600 "
+                          className="h-6 md:h-8 md:w-8 text-red-600 "
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
@@ -59,7 +59,7 @@ function DropDown(props) {
                         </svg>
 
                       </div>
-                      <p className="p-3 text-xl font-normal text-justify  text-blue-1 "> Bad Health</p>
+                      <p className="hidden md:block md:p-3 md:text-xl  font-normal text-justify  text-blue-1 "> Bad Health</p>
                     </div>
                 )}
         </div>
@@ -81,14 +81,14 @@ function DropDown(props) {
       </button>
       {isOpen && (
         <>
-          <div className="flex justify-between w-full p-6">
+          <div className="md:flex justify-between w-full px-6 md:p-6">
             <p>Age : {props.servey.age}</p>
             {props.servey.sexe == 1 ? <p>Sexe : Male</p> : <p>Sexe : Female</p>}
             <p>
               Number of cigarettes per day : {props.servey.cigarettes_per_day}
             </p>
           </div>
-          <div className="flex justify-between w-full px-6">
+          <div className="md:flex justify-between w-full px-6 md:p-6">
             {props.servey.diabetes == 1 ? (
               <p>Diabetes : Yes</p>
             ) : (
@@ -105,7 +105,7 @@ function DropDown(props) {
               <p>Stroke Prevalence : No</p>
             )}
           </div>
-          <div className="flex justify-between w-full p-6">
+          <div className="md:flex justify-between w-full px-6 md:p-6">
             <p>Glucose level : {props.servey.glucose_levels}</p>
             {props.servey.blood_pressure_meds == 1 ? (
               <p>Blood Pressure Medication : Yes</p>
@@ -117,7 +117,7 @@ function DropDown(props) {
               Systolic blood pressure : {props.servey.systolic_blood_pressure}
             </p>
           </div>
-          <div className="flex justify-between w-full px-6">
+          <div className="md:flex justify-between w-full px-6">
             <p>Heart Rate : {props.servey.heart_beat}</p>
             <p>Body Mass Index(BMI) : {props.servey.bmi}</p>
             <p>Total cholesterol level : {props.servey.cholesterol}</p>

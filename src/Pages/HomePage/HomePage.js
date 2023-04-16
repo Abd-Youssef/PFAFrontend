@@ -34,35 +34,35 @@ function HomePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="h-full w-auto bg-white">
-      <div className=" bg-cover bg-center bg-homePage h-screen  bg-blue-1">
-      {isVisible && (
-        <button
-        className="fixed bottom-5 right-5 bg-blue-1 text-white py-3 px-3 rounded-full shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out"
-        onClick={handleClick}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </button>
-      )}
+    <div className=" w-auto bg-white">
+      <div className=" bg-cover bg-center bg-homePage md:h-screen  bg-blue-1">
+        {isVisible && (
+          <button
+            className="fixed bottom-5 right-5 bg-blue-1 text-white py-3 px-3 rounded-full shadow-lg hover:-translate-y-2 transition duration-300 ease-in-out"
+            onClick={handleClick}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+          </button>
+        )}
         <NavBar />
-        <div className=" w-2/5 mx-36 my-20">
-          <h1 className=" text-7xl  font-normal leading-normal text-white pb-6 ">
+        <div className="p-10 md:w-2/5 md:p-0 md:mx-36 md:my-20">
+          <h1 className=" text-7xl md:text-5xl  font-normal md:leading-normal text-white pb-6 ">
             Disease Prediction Website
           </h1>
-          <p className=" text-lg font-normal text-justify text-white ">
+          <p className="text-xl md:text-lg font-normal text-justify text-white ">
             Welcome to <b>DiseasDetetctive</b>, your personal disease prediction
             website.
             <b> DiseasDetetctive</b> uses advanced predictive algorithms to
@@ -93,14 +93,13 @@ function HomePage() {
           )}
         </div>
       </div>
-      <div className=" h-screen flex bg-white" ref={ref}>
-        <div className="justify-center d w-full mx-48 my-6">
-          <h1 className="flex text-6xl justify-center font-normal leading-normal text-blue-1  ">
+      <div className=" md:h-screen flex bg-white" ref={ref}>
+        <div className="justify-center md:w-full md:mx-48 md:my-6">
+          <h1 className="flex text-6xl text-center md:justify-center font-normal leading-normal text-blue-1  ">
             Explore our Services
           </h1>
-          <Link className="flex w-full  justify-between py-10  "
-          to="/HeartDiseasePrediction">
-            <div className="w-1/4">
+          <div className="flex w-full p-4 justify-between py-10  ">
+            <Link className="w-2/5 md:w-1/4" to="/HeartDiseasePrediction">
               <div className="w-full  ">
                 <img
                   class="mx-auto w-full "
@@ -108,21 +107,21 @@ function HomePage() {
                   alt="Your Company"
                 />
               </div>
-              <h4 className=" text-2xl  font-semibold pt-5 text-blue-1">
+              <h4 className=" text-xl  font-semibold pt-5 text-blue-1">
                 Heart Disease Prediction
               </h4>
-              <p class="text-base py-3 text-gray-500 text-justify underline-offset-8">
+              <p class="text-sm md:text-base py-3 text-gray-500 text-justify underline-offset-8">
                 Medical Data Required: Age, Sex, Chest Pain, Rest Blood
-                Pressure, Cholestrol, Fasting,Blood Sugar, Rest ECG ...
+                Pressure, Cholestrol, Fasting, Blood Sugar, Rest ECG ...
               </p>
               <Link
                 to="/HeartDiseasePrediction"
-                className="py-2 text-2xl underline underline-offset-8 font-bold "
+                className="py-2 text-lg md:text-2xl underline underline-offset-8 font-bold "
               >
                 Explore page <span aria-hidden="true">&rarr;</span>
               </Link>
-            </div>
-            <Link className="w-1/4">
+            </Link>
+            <Link className="w-2/5 md:w-1/4">
               <div className="w-full ">
                 <img
                   class="mx-auto w-full "
@@ -130,21 +129,21 @@ function HomePage() {
                   alt="Your Company"
                 />
               </div>
-              <h4 className=" text-2xl  font-semibold pt-5 text-blue-1">
+              <h4 className=" text-xl  font-semibold pt-5 text-blue-1">
                 Diabetes Prediction
               </h4>
-              <p class="text-base text-justify py-3 text-gray-500 ">
+              <p class="text-sm md:text-base text-justify py-3 text-gray-500 ">
                 Medical Data Required: Pregnancies, Glucose, Blood Pressure,
                 Skin Thickness, Insulin, BMI, DPF, Age...
               </p>
               <Link
                 to=""
-                className="py-2 text-2xl underline underline-offset-8 font-bold "
+                className="py-2 text-lg md:text-2xl underline underline-offset-8 font-bold "
               >
                 Explore page <span aria-hidden="true">&rarr;</span>
               </Link>
             </Link>
-            <div className="flex justify-center items-center w-1/6  ">
+            <div className="hidden md:flex justify-center items-center w-48  ">
               <Link
                 to=""
                 className="py-2 text-2xl underline underline-offset-8 font-bold "
@@ -152,97 +151,102 @@ function HomePage() {
                 Explore More <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
-      <div className=" h-screen flex bg-white">
-        <div className=" flex justify-center  w-full mx-48 my-6">
-          <div className="justify-center w-1/2  my-6">
-            <img class="mx-auto  " src={doctorPng} alt="Your Company" />
-          </div>
-          <div className="justify-center w-1/2 pl-20 py-10">
-            <p className=" text-4xl text-justify font-normal leading-normal pb-10 text-blue-1">
-              You can get in touch with our top physicians to find out more
-              about your situation.
-            </p>
-            <div className="flex items-center ">
-              <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
-                <svg
-                  class="text-white "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold leading-6 text-gray-900 px-5"
-                id="modal-title"
-              >
-                We connect our customers with the best.
-              </h3>
+      <div className="  flex bg-white">
+        <div className="justify-center md:w-full md:mx-48 md:my-6">
+          <div className="md:flex w-full p-4 justify-between py-10  ">
+            <div className="flex  justify-center md:w-1/2  md:my-6">
+              <img class=" w-2/3 md:w-auto md:mx-auto " src={doctorPng} alt="Your Company" />
             </div>
-            <div className="flex items-center py-5">
-              <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
-                <svg
-                  class="text-white "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
+            <div className=" justify-center md:w-1/2 md:pl-20 md:py-10">
+              <p className="text-2xl md:text-4xl text-justify font-normal leading-normal pb-10 text-blue-1">
+                You can get in touch with our top physicians to find out more
+                about your situation.
+              </p>
+              <div className="">
+
+              <div className="flex items-center ">
+                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+                  <svg
+                    class="text-white "
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  id="modal-title"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                  We connect our customers with the best.
+                </h3>
               </div>
-              <h3
-                class="text-xl font-semibold leading-6 text-gray-900 px-5"
-                id="modal-title"
-              >
-                Advisor success customer launch party.
-              </h3>
-            </div>
-            <div className="flex items-center pb-10">
-              <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
-                <svg
-                  class="text-white "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
+              <div className="flex items-center py-5">
+                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+                  <svg
+                    class="text-white "
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  id="modal-title"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                  Advisor success customer launch party.
+                </h3>
               </div>
-              <h3
-                class="text-xl font-semibold leading-6 text-gray-900 px-5"
-                id="modal-title"
+              <div className="flex items-center pb-10">
+                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+                  <svg
+                    class="text-white "
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  id="modal-title"
+                >
+                  Business-to-consumer long tail.
+                </h3>
+              </div>
+              </div>
+              <Link
+                to={"/doctors"}
+                className="flex justify-center bg-blue-1 rounded-full w-2/5 py-5 text-2xl font-bold text-white hover:ring-2 hover:borde-white"
               >
-                Business-to-consumer long tail.
-              </h3>
+                Start Now
+              </Link>
             </div>
-            <Link
-              to={""}
-              className="flex justify-center bg-blue-1 rounded-full w-2/5 py-5 text-2xl font-bold text-white hover:ring-2 hover:borde-white"
-            >
-              Start Now
-            </Link>
           </div>
         </div>
       </div>

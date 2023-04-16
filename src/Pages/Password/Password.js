@@ -28,14 +28,14 @@ function Password() {
     if (response.status === 200) {
       setPopUp(true);
     } else {
-      seterror("error", response.message);
+      seterror("Add email adress", response.message);
     }
   };
   const onCancel = () => {
     navigate("/signin");
   };
   return (
-    <div className="flex w-full h-full bg-disease bg-blue-1 ">
+    <div className="md:flex w-full h-full bg-disease bg-blue-1 md:px-6">
       {PopUp && (
         <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
           <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -78,26 +78,26 @@ function Password() {
           </div>
         </div>
       )}
-      <div className="flex w-1/2 min-h-full items-center justify-center py-12 sm:px-6 lg:px-24 ">
-        <div className="w-full  space-y-8 ">
+      <div class="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
+        <div class="w-full  space-y-8 ">
           <div>
             <img
-              className="mx-auto w-full h-auto"
+              class="mx-auto w-4/5 md:w-full h-auto"
               src={logoPng}
               alt="Your Company"
             />
-            <p className="mt-5  text-center text-base text-white">
+            <p class="mt-5 hidden md:block text-center text-base text-white">
               “Declare the past, diagnose the present, foretell the future.” ―
               Hippocrates
             </p>
           </div>
         </div>
       </div>
-      <div className="flex w-1/2 h-full min-h-full items-center justify-center py-12  sm:px-6 lg:px-24">
-        <div className="w-full max-w-2xl h-3/5 space-y-8 py-12 px-12 rounded-3xl bg-white shadow">
-          {error ? (
-            <div className="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
-              <svg
+      <div class="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
+        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
+        {error ? (
+                <div class="mx-auto  flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100   ">
+                  <svg
                 className="h-8 w-8 text-red-600 "
                 fill="none"
                 viewBox="0 0 24 24"

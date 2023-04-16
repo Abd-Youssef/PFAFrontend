@@ -14,7 +14,7 @@ function PrivateRoute(props) {
       </div>
     );
   } else {
-    return <Navigate to={"/"} replace />;
+    return <Navigate to={"/signin"} replace />;
   }
 }
 

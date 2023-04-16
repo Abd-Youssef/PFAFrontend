@@ -21,12 +21,12 @@ function ProfilePage() {
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
-      <div className="flex flex-col justify-center w-full px-32  bg-blue-50">
-        <p className="text-3xl text-start pt-10 text-blue-1 ">Profile :</p>
-        <div className="flex justify-between p-6  ">
-          <div className="  w-96 h-72 shadow-2xl rounded-xl bg-white">
+      <div className="flex flex-col justify-center w-full px-2 md:px-20  bg-blue-50">
+        <p className="text-3xl text-start pt-6 md:pt-10 text-blue-1 ">Profile :</p>
+        <div className="md:flex justify-between py-6  ">
+          <div className="md:w-96 md:h-72 mb-5 shadow-2xl rounded-xl bg-white">
             <div className="flex w-full justify-center py-6   ">
-              <img className="w-1/3  " src={userPng} alt="user" />
+              <img className="w-1/4 md:w-1/3  " src={userPng} alt="user" />
             </div>
             <div className="flex w-full justify-center    ">
               <p className="text-2xl font-semibold  text-blue-1 ">
@@ -39,8 +39,8 @@ function ProfilePage() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col w-2/3  justify-between rounded-xl shadow-2xl bg-white">
-            <div className="w-full  p-10 justify-between">
+          <div className="flex flex-col  md:w-2/3  justify-between rounded-xl shadow-2xl bg-white">
+            <div className="w-full p-3 md:p-10 justify-between">
               <h1 className=" text-2xl  font-semibold leading-normal text-blue-1 pb-6 ">
               Predection History 
               </h1>

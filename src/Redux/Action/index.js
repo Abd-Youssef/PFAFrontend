@@ -16,4 +16,19 @@ const clearData = () => {
     type: "CLEAR_DATA",
   };
 };
-export { SetUser, updateData ,clearData};
+const SameCategoryProduct = (data, event) => {
+  return {
+    type: "SAME_CATEGORY_PRODUCT",
+    data: data,
+    searchTerm: event,
+  };
+};
+const searchProduct = (data, search, speciality) => {
+  return {
+    type: "SEARCH_PRODUCT",
+    data: data,
+    searchTerm: search,
+    Speciality :speciality,
+  };
+};
+export { SetUser, updateData, clearData, SameCategoryProduct, searchProduct };
