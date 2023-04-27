@@ -119,6 +119,50 @@ const updateDoctor = async (id,body)=> {
     })
     return response.json() ;
 }
+const dailyStat= async (body)=>{
+    const response = await fetch( apiUrl+"stat/DailyStats", {
+        method: "POST",
+        body: body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+      })
+        return response.json();
+}
+const allTimeStat= async (body)=>{
+    const response = await fetch( apiUrl+"stat/AllTimeStats", {
+        method: "POST",
+        body: body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+      })
+        return response.json();
+}
+const monthlyStat= async (body)=>{
+    const response = await fetch( apiUrl+"stat/MonthlyStats", {
+        method: "POST",
+        body: body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+      })
+        return response.json();
+}
+const weeklyStat= async (body)=>{
+    const response = await fetch( apiUrl+"stat/WeeklyStats", {
+        method: "POST",
+        body: body,
+        headers:{
+            ...headers,
+            "Authorization":"Bearer "+getToken(),
+        }    
+      })
+        return response.json();
+}
 export {
     signUp,
     signIn,   
@@ -131,4 +175,8 @@ export {
     deleteDoctor,
     addDoctor,
     updateDoctor,
+    dailyStat,
+    allTimeStat,
+    monthlyStat,
+    weeklyStat,
 }

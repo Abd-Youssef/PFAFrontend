@@ -60,12 +60,12 @@ function HomePage() {
         <NavBar />
         <div className="p-10 md:w-2/5 md:p-0 md:mx-36 md:my-20">
           <h1 className=" text-7xl md:text-5xl  font-normal md:leading-normal text-white pb-6 ">
-            Disease Prediction Website
+            Disease Prediction 
           </h1>
           <p className="text-xl md:text-lg font-normal text-justify text-white ">
-            Welcome to <b>DiseasDetetctive</b>, your personal disease prediction
+            Welcome to <b>DiseaseDetective</b>, your personal disease prediction
             website.
-            <b> DiseasDetetctive</b> uses advanced predictive algorithms to
+            <b> DiseaseDetective</b> uses advanced predictive algorithms to
             predict your likelihood of having a specific disease or condition.
           </p>
           {!auth.token ? (
@@ -102,7 +102,7 @@ function HomePage() {
             <Link className="w-2/5 md:w-1/4" to="/HeartDiseasePrediction">
               <div className="w-full  ">
                 <img
-                  class="mx-auto w-full "
+                  className="mx-auto w-full "
                   src={HeartDiseasePredictionPng}
                   alt="Your Company"
                 />
@@ -110,9 +110,9 @@ function HomePage() {
               <h4 className=" text-xl  font-semibold pt-5 text-blue-1">
                 Heart Disease Prediction
               </h4>
-              <p class="text-sm md:text-base py-3 text-gray-500 text-justify underline-offset-8">
+              <p className="text-sm md:text-base py-3 text-gray-500 text-justify underline-offset-8">
                 Medical Data Required: Age, Sex, Chest Pain, Rest Blood
-                Pressure, Cholestrol, Fasting, Blood Sugar, Rest ECG ...
+                Pressure, Cholesterol, Fasting, Blood Sugar, Rest ECG ...
               </p>
               <Link
                 to="/HeartDiseasePrediction"
@@ -124,7 +124,7 @@ function HomePage() {
             <Link className="w-2/5 md:w-1/4">
               <div className="w-full ">
                 <img
-                  class="mx-auto w-full "
+                  className="mx-auto w-full "
                   src={DiabetesPredictionPng}
                   alt="Your Company"
                 />
@@ -132,7 +132,7 @@ function HomePage() {
               <h4 className=" text-xl  font-semibold pt-5 text-blue-1">
                 Diabetes Prediction
               </h4>
-              <p class="text-sm md:text-base text-justify py-3 text-gray-500 ">
+              <p className="text-sm md:text-base text-justify py-3 text-gray-500 ">
                 Medical Data Required: Pregnancies, Glucose, Blood Pressure,
                 Skin Thickness, Insulin, BMI, DPF, Age...
               </p>
@@ -156,21 +156,21 @@ function HomePage() {
       </div>
       <div className="  flex bg-white">
         <div className="justify-center md:w-full md:mx-48 md:my-6">
-          <div className="md:flex w-full p-4 justify-between py-10  ">
+          <div className="md:flex w-full p-4  justify-between py-10 md:px-0 ">
             <div className="flex  justify-center md:w-1/2  md:my-6">
-              <img class=" w-2/3 md:w-auto md:mx-auto " src={doctorPng} alt="Your Company" />
+              <img className=" w-2/3 md:w-auto md:mx-auto " src={doctorPng} alt="Your Company" />
             </div>
-            <div className=" justify-center md:w-1/2 md:pl-20 md:py-10">
+            <div className=" justify-center md:w-1/2 md:pl-16 md:py-10">
               <p className="text-2xl md:text-4xl text-justify font-normal leading-normal pb-10 text-blue-1">
-                You can get in touch with our top physicians to find out more
+                You can get in touch with our top doctors to find out more
                 about your situation.
               </p>
               <div className="">
 
-              <div className="flex items-center ">
-                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+              <div className="flex items-center space-x-3">
+                <div className=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
                   <svg
-                    class="text-white "
+                    className="text-white "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
@@ -185,16 +185,16 @@ function HomePage() {
                   </svg>
                 </div>
                 <h3
-                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  className="text-xl font-semibold leading-6 text-gray-900 "
                   id="modal-title"
                 >
                   We connect our customers with the best.
                 </h3>
               </div>
-              <div className="flex items-center py-5">
-                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+              <div className="flex items-center py-5 space-x-3">
+                <div className=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
                   <svg
-                    class="text-white "
+                    className="text-white "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
@@ -209,16 +209,16 @@ function HomePage() {
                   </svg>
                 </div>
                 <h3
-                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  className="text-xl font-semibold leading-6 text-gray-900"
                   id="modal-title"
                 >
                   Advisor success customer launch party.
                 </h3>
               </div>
-              <div className="flex items-center pb-10">
-                <div class=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
+              <div className="flex items-center pb-10 space-x-3">
+                <div className=" h-11 w-11 items-center justify-center rounded-full bg-blue-1 ">
                   <svg
-                    class="text-white "
+                    className="text-white "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
@@ -233,7 +233,7 @@ function HomePage() {
                   </svg>
                 </div>
                 <h3
-                  class="text-xl font-semibold leading-6 text-gray-900 px-5"
+                  className="text-xl font-semibold leading-6 text-gray-900 "
                   id="modal-title"
                 >
                   Business-to-consumer long tail.

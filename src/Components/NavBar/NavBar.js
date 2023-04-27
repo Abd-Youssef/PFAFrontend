@@ -27,25 +27,27 @@ export default function NavBar() {
           >
             Home
           </Link>
+          {auth.user?.role == "admin" && (
+            <Link
+              to="/dashboard"
+              className="text-lg font-semibold leading-6 text-white hover:text-blue-200"
+            >
+              Dashboard
+            </Link>
+          )}
           <Link
             to="/doctors"
             className="text-lg font-semibold leading-6 text-white hover:text-blue-200"
           >
             Doctors
-          </Link> 
-          <Link
-            href="#"
-            className="text-lg font-semibold leading-6 text-white hover:text-blue-200"
-          >
-            Sevices
           </Link>
+
           <Link
-            href="#"
+            to="/aboutus"
             className="text-lg font-semibold leading-6 text-white hover:text-blue-200"
           >
             About Us
           </Link>
-          
         </div>
         {auth.token ? (
           <div className="flex items-center md:flex-1 md:justify-end md:gap-x-12">

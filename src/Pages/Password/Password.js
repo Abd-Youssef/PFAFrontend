@@ -24,7 +24,6 @@ function Password() {
         email: state.email,
       })
     );
-    console.log("res", response);
     if (response.status === 200) {
       setPopUp(true);
     } else {
@@ -38,7 +37,7 @@ function Password() {
     <div className="md:flex w-full h-full bg-disease bg-blue-1 md:px-6">
       {PopUp && (
         <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
           <div className=" flex relative  items-center justify-center  text-center  min-h-screen">
             <div className="bg-white w-1/4  rounded-lg overflow-hidden shadow-xl p-4">
@@ -78,25 +77,25 @@ function Password() {
           </div>
         </div>
       )}
-      <div class="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
-        <div class="w-full  space-y-8 ">
+      <div className="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
+        <div className="w-full  space-y-8 ">
           <div>
             <img
-              class="mx-auto w-4/5 md:w-full h-auto"
+              className="mx-auto w-4/5 md:w-full h-auto"
               src={logoPng}
               alt="Your Company"
             />
-            <p class="mt-5 hidden md:block text-center text-base text-white">
+            <p className="mt-5 hidden md:block text-center text-base text-white">
               “Declare the past, diagnose the present, foretell the future.” ―
               Hippocrates
             </p>
           </div>
         </div>
       </div>
-      <div class="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
-        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
+      <div className="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
+        <div className=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
         {error ? (
-                <div class="mx-auto  flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100   ">
+                <div className="mx-auto  flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100   ">
                   <svg
                 className="h-8 w-8 text-red-600 "
                 fill="none"
@@ -126,7 +125,7 @@ function Password() {
               Forgot Password ?
             </h2>
             <p className="mt-2 text-center text-base text-gray-600">
-              Enter your email to reset your email
+              Enter your email to reset your Password
             </p>
           </div>
           <div className="-space-y-px rounded-md shadow-sm">

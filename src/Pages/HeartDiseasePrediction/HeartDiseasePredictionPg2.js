@@ -23,7 +23,6 @@ function HeartDiseasePredictionPg2() {
       [key]: e.target.value,  
     });
     dispatch(updateData(key, e.target.value));
-    console.log("form", form);
   };
   const next = () => {
     if (state["age"] && state["sex"] && state["smooker"]) {
@@ -39,7 +38,6 @@ function HeartDiseasePredictionPg2() {
       navigate("/HeartDiseasePrediction/2");
     } else {
       seterror("Fill in all the fields");
-      console.log("error", error);
     }
   };
   return (
@@ -72,8 +70,8 @@ function HeartDiseasePredictionPg2() {
               <ErrorNav message={error} />
             </div>
             <div className="flex w-full p-4 md:p-8 justify-between items-center">
-              <h1 className="text-base w-1/2 md:w-1/3 md:text-2xl font-semibold  text-blue-1  ">
-                What is your sex?
+              <h1 className="text-base w-1/2 md:w-1/3 md:text-xl font-normal  text-blue-1  ">
+                What is your sex ?
               </h1>
               <div className="flex justify-evenly w-1/2   ">
                 <div
@@ -126,8 +124,8 @@ function HeartDiseasePredictionPg2() {
               </div>
             </div>
             <div className="flex w-full p-4 md:p-8 justify-between items-center">
-              <h1 className="text-base w-1/2 md:w-1/3 md:text-2xl font-semibold  text-blue-1  ">
-                How old are you?
+              <h1 className="text-base w-1/2 md:w-1/3 md:text-xl font-normal  text-blue-1  ">
+                How old are you ?
               </h1>
               <div className="flex justify-evenly w-1/2   ">
                 <Input
@@ -140,7 +138,7 @@ function HeartDiseasePredictionPg2() {
               </div>
             </div>
             <div className="flex w-full p-4 md:p-8 justify-between items-center">
-              <h1 className="text-base w-1/2 md:w-1/3 md:text-2xl font-semibold  text-blue-1  ">
+              <h1 className="text-base w-1/2 md:w-1/3 md:text-xl font-normal  text-blue-1  ">
                 Do you smook ?
               </h1>
               <div className="flex justify-evenly w-1/2   ">
@@ -195,8 +193,8 @@ function HeartDiseasePredictionPg2() {
             </div>
             {state.smooker == 1 && (
               <div className="flex w-full p-4 md:p-8 justify-between items-center">
-              <h1 className="text-base w-1/2 md:w-1/3 md:text-2xl font-semibold  text-blue-1  ">
-                  How many cigarettes per day?
+              <h1 className="text-base w-1/2 md:w-1/3 md:text-xl font-normal  text-blue-1  ">
+                  How many cigarettes per day ?
                 </h1>
                 <div className="flex justify-evenly w-1/2   ">
                   <Input

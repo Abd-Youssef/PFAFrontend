@@ -8,7 +8,6 @@ function NavPages(props) {
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
-    console.log("selectedOption", event.target.value);
     switch (event.target.value) {
       case "Croissant":
         dispatch(SortAscendingProduct(props.data));

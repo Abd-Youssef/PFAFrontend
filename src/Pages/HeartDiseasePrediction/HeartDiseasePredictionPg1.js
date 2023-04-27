@@ -1,11 +1,15 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import NavBar from "../../Components/NavBar/NavBar";
 import HeartDiseasePredictionPng from "../../Assets/HeartDiseasePrediction.png";
 
 function HeartDiseasePredictionPg1() {
-  const navigate = useNavigate();
+  const location = useLocation(); 
+
+  useEffect(() => {
+    window.scrollTo(0, 90);
+  }, [location]);
   return (
     <div className="bg-cover bg-center bg-homePage   w-full bg-blue-1">
       <NavBar />
@@ -34,7 +38,7 @@ function HeartDiseasePredictionPg1() {
             <div className="md:flex w-full p-6 md:p-10 md:pt-0 justify-between">
               <div className="p-10 pt-0 md:flex md:w-2/5 md:p-0 ">
                 <img
-                  class="mx-auto  "
+                  className="mx-auto  "
                   src={HeartDiseasePredictionPng}
                   alt="Your Company"
                 />
@@ -54,7 +58,7 @@ function HeartDiseasePredictionPg1() {
             <div className="flex justify-end w-full items-center px-10 pb-8 ">
               <Link
                 to="1"
-                class="border-2  rounded-md py-2 px-5 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 "
+                className="border-2  rounded-md py-2 px-5 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 "
               >
                 Next
               </Link>

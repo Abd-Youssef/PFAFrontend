@@ -88,7 +88,7 @@ function DropDown(props) {
               Number of cigarettes per day : {props.servey.cigarettes_per_day}
             </p>
           </div>
-          <div className="md:flex justify-between w-full px-6 md:p-6">
+          <div className="md:flex justify-between w-full px-6 ">
             {props.servey.diabetes == 1 ? (
               <p>Diabetes : Yes</p>
             ) : (

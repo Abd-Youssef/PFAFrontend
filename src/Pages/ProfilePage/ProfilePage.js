@@ -17,7 +17,6 @@ function ProfilePage() {
       setServeys(response.data);
     }
   };
-  console.log("Serveys", Serveys);
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
@@ -42,7 +41,7 @@ function ProfilePage() {
           <div className="flex flex-col  md:w-2/3  justify-between rounded-xl shadow-2xl bg-white">
             <div className="w-full p-3 md:p-10 justify-between">
               <h1 className=" text-2xl  font-semibold leading-normal text-blue-1 pb-6 ">
-              Predection History 
+              Prediction History 
               </h1>
               {Serveys.map((el, index) => (
                 <div className="w-full pb-6" key={index}>

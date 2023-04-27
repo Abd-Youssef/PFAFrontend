@@ -8,7 +8,6 @@ function SelectMenus(props) {
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
-    console.log("selectedOption", event.target.value);
     dispatch(SameCategoryProduct(props.data, event.target.value));
     props.onChange(event.target.value);
   };

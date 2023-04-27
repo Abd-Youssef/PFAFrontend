@@ -32,7 +32,6 @@ function EditDoctor(props) {
         phoneNumber: state.phoneNumber,
       })
     );
-    console.log(response);
     if (response.status === 200) {
       props.closePopUpDoctor();
     } else {
@@ -41,11 +40,11 @@ function EditDoctor(props) {
   };
 
   return (
-        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 p-6 rounded-3xl bg-white ">
+        <div className=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 p-6 rounded-3xl bg-white ">
           {error ? (
-            <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
+            <div className="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
               <svg
-                class="h-8 w-8 text-red-600 "
+                className="h-8 w-8 text-red-600 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -59,7 +58,7 @@ function EditDoctor(props) {
                 />
               </svg>
               <h3
-                class="text-base font-semibold leading-6 text-gray-900 px-5"
+                className="text-base font-semibold leading-6 text-gray-900 px-5"
                 id="modal-title"
               >
                 {error}
@@ -69,11 +68,11 @@ function EditDoctor(props) {
             <></>
           )}
           <div>
-            <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Edit Doctor
             </h2>
           </div>
-          <div class="space-y-5 rounded-md shadow-sm">
+          <div className="space-y-5 rounded-md shadow-sm">
             <Input
               className={
                 "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
@@ -119,7 +118,7 @@ function EditDoctor(props) {
                 />
                 <Button
                   onClick={() => {onSubmit() }}
-                  name={"Add"}
+                  name={"Edit"}
                   className="group relative flex w-28 justify-center rounded-md bg-green-500 py-2 px-3 text-sm font-bold text-white hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-450"
                 />
               </div>

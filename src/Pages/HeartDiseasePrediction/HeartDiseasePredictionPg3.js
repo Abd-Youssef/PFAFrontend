@@ -24,7 +24,6 @@ function HeartDiseasePredictionPg3() {
       [key]: e.target.value,
     });
     dispatch(updateData(key, e.target.value));
-    console.log("form", form);
   };
   const next = () => {
     if (

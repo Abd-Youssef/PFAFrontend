@@ -22,13 +22,11 @@ const HeartDiseasePredictionReducer = (
   switch (type) {
     case "UPDATE_DATA":
       dict[key] = valeur;
-      console.log("UPDATE_DATA:", dict);
 
       return {
         data: dict,
       };
     case "CLEAR_DATA":
-      console.log("CLEAR_DATA:", dict);
 
       return {
         data: {

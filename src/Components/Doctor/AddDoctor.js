@@ -34,7 +34,6 @@ function AddDoctor(props) {
         phoneNumber: state.phoneNumber,
       })
     );
-    console.log(response);
     if (response.status === 201) {
       props.closePopUpDoctor();
     } else {
@@ -53,11 +52,11 @@ function AddDoctor(props) {
     });
   };
   return (
-    <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 p-6 rounded-3xl bg-white ">
+    <div className=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 p-6 rounded-3xl bg-white ">
       {error ? (
-        <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
+        <div className="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
           <svg
-            class="h-8 w-8 text-red-600 "
+            className="h-8 w-8 text-red-600 "
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -71,7 +70,7 @@ function AddDoctor(props) {
             />
           </svg>
           <h3
-            class="text-base font-semibold leading-6 text-gray-900 px-5"
+            className="text-base font-semibold leading-6 text-gray-900 px-5"
             id="modal-title"
           >
             {error}
@@ -81,11 +80,11 @@ function AddDoctor(props) {
         <></>
       )}
       <div>
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
           Add Doctor
         </h2>
       </div>
-      <div class="space-y-5 rounded-md shadow-sm">
+      <div className="space-y-5 rounded-md shadow-sm">
         <Input
           className={
             "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"

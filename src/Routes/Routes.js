@@ -20,10 +20,11 @@ import PublicRoute from "./PublicRoute/PublicRoute";
 import DoctorsPage from "../Pages/DoctorsPage/DoctorsUserPage";
 import DoctorsUserPage from "../Pages/DoctorsPage/DoctorsUserPage";
 import DoctorsAdminPage from "../Pages/DoctorsPage/DoctorsAdminPage";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 function Routes(props) {
   const [token, setToken] = useState(null);
   const auth = useSelector((state) => state.auth);
-  console.log("auth :", auth);
   return (
     <BrowserRouter>
       <ComponentRoutes>
@@ -107,7 +108,20 @@ function Routes(props) {
           />
         }
       />}
-        
+        <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute
+            component={<Dashboard token={token} />}
+          />
+        }
+      />
+      <Route
+        path="/aboutus"
+        element={<PrivateRoute
+          component={<AboutUs token={token} />}
+        />}
+      />
       </ComponentRoutes>
     </BrowserRouter>
   );

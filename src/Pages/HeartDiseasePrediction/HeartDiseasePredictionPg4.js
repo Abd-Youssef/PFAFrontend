@@ -27,11 +27,8 @@ function HeartDiseasePredictionPg3() {
       [key]: e.target.value,
     });
     dispatch(updateData(key, e.target.value));
-    console.log("form", form);
   };
   const next = () => {
-    console.log("auth", auth);
-    console.log("form", form);
     if (
       state["totChol"] &&
       state["sysBP"] &&
@@ -81,7 +78,7 @@ function HeartDiseasePredictionPg3() {
 
             <div className="flex w-full p-8  justify-between ">
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
-                Total cholesterol level :
+                Total cholesterol level (mg/dL):
               </h1>
               <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
@@ -95,7 +92,7 @@ function HeartDiseasePredictionPg3() {
             </div>
             <div className="flex w-full p-8 justify-between ">
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
-                Systolic blood pressure :
+                Systolic blood pressure (mmHg):
               </h1>
               <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
@@ -109,7 +106,7 @@ function HeartDiseasePredictionPg3() {
             </div>
             <div className="flex w-full p-8 justify-between ">
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
-                Body Mass Index(BMI) :
+                Body Mass Index (BMI) :
               </h1>
               <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
@@ -123,7 +120,7 @@ function HeartDiseasePredictionPg3() {
             </div>
             <div className="flex w-full p-8 justify-between ">
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
-                Heart Rate :
+                Heart Rate (bpm) :
               </h1>
               <div className="flex justify-evenly  w-2/5 md:h-full text-center items-center ">
                 <Input
@@ -137,7 +134,7 @@ function HeartDiseasePredictionPg3() {
             </div>
             <div className="flex w-full p-8 justify-between ">
               <h1 className="w-3/5 text-xl font-normal  text-blue-1  ">
-                Glucose level :
+                Glucose level (mg/dL) :
               </h1>
               <div className="flex justify-evenly w-2/5   ">
                 <Input

@@ -23,7 +23,6 @@ function TabDoctors(props) {
   const [selectedSpeciality, setSelectedSpeciality] = useState("");
   const handleSpecialityChange = (value) => {
     setSelectedSpeciality(value);
-    console.log("spec", value);
   };
   const getCategories = async () => {
     const response = await getDoctorsSpecialities();
@@ -65,14 +64,13 @@ function TabDoctors(props) {
     getAllDoctors();
   }, [update]);
   useEffect(() => {
-    console.log("mount", TemporeryData);
     setTemporeryData(search.data);
   }, [search.data]);
   return (
-    <div class="relative w-full overflow-x-auto shadow-md rounded-lg">
+    <div className="relative w-full overflow-x-auto shadow-md rounded-lg">
       {PopUpDelete && (
         <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
           <div className=" flex relative  items-center justify-center  text-center  min-h-screen">
             <div className="bg-white md:w-1/4  rounded-lg overflow-hidden shadow-xl p-4">
@@ -121,7 +119,7 @@ function TabDoctors(props) {
       )}
       {PopUpEditDoctor && (
         <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
           <div className=" flex relative  items-center justify-center  text-center  min-h-screen">
             <div className="bg-white w-full md:w-1/4  rounded-lg overflow-hidden shadow-xl p-4">
@@ -132,7 +130,7 @@ function TabDoctors(props) {
       )}
       {PopUpAddDoctor && (
         <div className="fixed z-10  inset-0 bg-opacity-75 overflow-y-auto">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
           <div className=" flex relative  items-center justify-center  text-center  min-h-screen">
             <div className="bg-white w-full md:w-1/4  rounded-lg overflow-hidden shadow-xl p-4">
@@ -141,13 +139,13 @@ function TabDoctors(props) {
           </div>
         </div>
       )}
-      <div class="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between p-4">
         <SelectMenus
           categories={categories}
           data={doctors}
           onChange={handleSpecialityChange}
         />
-        <div class="flex items-center pl-8">
+        <div className="flex items-center pl-8">
           {props.role == "admin" && (
             <Button
               name="Add"
@@ -158,10 +156,10 @@ function TabDoctors(props) {
             />
             
           )}
-          <div class="relative ml-8">
-            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="relative ml-8">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="w-5 h-5 text-gray-500 dark:text-gray-400"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -170,7 +168,7 @@ function TabDoctors(props) {
                 <path
                   fill-rule="evenodd"
                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </div>
@@ -184,34 +182,34 @@ function TabDoctors(props) {
           </div>
         </div>
       </div>
-      <table class=" md:w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
-        <thead class="text-base text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table className=" md:w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
+        <thead className="text-base text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               Doctor name
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               speciality
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               address
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" className="px-6 py-3">
               Phone number
             </th>
             {props.role == "admin" && (
               <>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Edit
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Delete
                 </th>
               </>
             )}
           </tr>
         </thead>
-        <tbody class="text-sm text-center text-gray-700 uppercase bg-gray-50 ">
+        <tbody className="text-sm text-center text-gray-700 uppercase bg-gray-50 ">
           {TemporeryData.map((el, index) => (
             <tr
               key={index}

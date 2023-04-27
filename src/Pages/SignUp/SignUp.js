@@ -34,7 +34,6 @@ function SignUp() {
     } else {
       seterror("password non compatible");
     }
-    console.log(response);
     if (response.status === 201) {
       //use navigate
       navigate("/signin");
@@ -51,27 +50,27 @@ function SignUp() {
 
   return (
     <div className="md:flex w-full h-full bg-disease bg-blue-1 md:px-6">
-      <div class="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
-        <div class="w-full  space-y-8 ">
+      <div className="flex md:w-1/2 md:min-h-full items-center justify-center pt-12 md:py-12  md:px-24 ">
+        <div className="w-full  space-y-8 ">
           <div>
             <img
-              class="mx-auto w-4/5 md:w-full h-auto"
+              className="mx-auto w-4/5 md:w-full h-auto"
               src={logoPng}
               alt="Your Company"
             />
-            <p class="mt-5 hidden md:block text-center text-base text-white">
+            <p className="mt-5 hidden md:block text-center text-base text-white">
               “Declare the past, diagnose the present, foretell the future.” ―
               Hippocrates
             </p>
           </div>
         </div>
       </div>
-      <div class="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
-        <div class=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
+      <div className="flex w-full h-3/4 md:w-1/2 md:h-full  md:min-h-full items-center justify-center md:py-12 md:px-24">
+        <div className=" md:w-full  max-w-2xl  space-y-8 md:space-y-6 py-12 px-12 rounded-3xl bg-white shadow">
           {error ? (
-            <div class="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
+            <div className="mx-auto flex h-12 w-72 flex-shrink-0 items-center justify-center rounded-full bg-red-100  ">
               <svg
-                class="h-8 w-8 text-red-600 "
+                className="h-8 w-8 text-red-600 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -85,7 +84,7 @@ function SignUp() {
                 />
               </svg>
               <h3
-                class="text-base font-semibold leading-6 text-gray-900 px-5"
+                className="text-base font-semibold leading-6 text-gray-900 px-5"
                 id="modal-title"
               >
                 {error}
@@ -95,14 +94,14 @@ function SignUp() {
             <></>
           )}
           <div>
-            <h2 class=" text-center text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className=" text-center text-3xl font-bold tracking-tight text-gray-900">
               Sign up
             </h2>
-            <p class="mt-2 text-center text-sm text-gray-600">
+            <p className="mt-2 text-center text-sm text-gray-600">
               Your <b>DiseaseDetective</b> Account
             </p>
           </div>
-          <div class="w-64 space-y-3 md:w-full">
+          <div className="w-64 space-y-3 md:w-full">
             <Input
               className={
                 "relative block w-full rounded-md border-0 p-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-green-1 sm:text-sm sm:leading-6"
@@ -158,11 +157,11 @@ function SignUp() {
               name={"Sign Up"}
               className="group relative flex w-full justify-center rounded-md bg-green-1 py-2 px-3 text-sm font-semibold text-white hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-450"
             />
-            <p class="mt-2 text-center text-sm text-gray-600">
+            <p className="mt-2 text-center text-sm text-gray-600">
               Already have an account ?
               <Link
                 to="/signin"
-                class="font-medium px-8 text-green-1 hover:text-green-500"
+                className="font-medium px-8 text-green-1 hover:text-green-500"
               >
                 Sign in
               </Link>
