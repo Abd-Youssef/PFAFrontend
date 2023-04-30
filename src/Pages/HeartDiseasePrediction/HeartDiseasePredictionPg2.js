@@ -11,12 +11,20 @@ function HeartDiseasePredictionPg2() {
   const dispatch = useDispatch();
   const form = useSelector((state) => state.formHeart);
   const [error, seterror] = useState();
+  console.log("form",form);
+  // const [state, setState] = useState({
+  //   sex: form.data["sex"],
+  //   age: form.data["age"],
+  //   smooker: form.data["smooker"],
+  //   nbCigerette: form.data["nbCigerette"],
+  // });
   const [state, setState] = useState({
-    sex: form.data["sex"],
-    age: form.data["age"],
-    smooker: form.data["smooker"],
-    nbCigerette: form.data["nbCigerette"],
+    sex: form.data["sex"] ? form.data["sex"] : "",
+    age: form.data["age"] ? form.data["age"] : "",
+    smooker: form.data["smooker"] ? form.data["smooker"] : "",
+    nbCigerette: form.data["nbCigerette"] ? form.data["nbCigerette"] : "",
   });
+  
   const onChange = (e, key) => {
     setState({
       ...state,
