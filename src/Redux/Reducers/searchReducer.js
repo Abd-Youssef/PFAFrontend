@@ -7,7 +7,7 @@ const searchReducer = (state = initialState, { type, data, searchTerm ,Specialit
   switch (type) {
     case "SEARCH_PRODUCT":
       if (Speciality) {
-        list = data.filter((el) =>
+        list = data.filter((el) => 
         el.speciality.toLowerCase().includes(Speciality.toLowerCase()) &&
         el.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
@@ -22,7 +22,7 @@ const searchReducer = (state = initialState, { type, data, searchTerm ,Specialit
         searching: true,
       };
     case "SAME_CATEGORY_PRODUCT":
-      if (searchTerm.toLowerCase()=="tous") {
+      if (searchTerm.toLowerCase()==="tous") {
         list =data ;
       } else {
         list = data.filter((el) =>

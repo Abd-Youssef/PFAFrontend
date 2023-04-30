@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
-import NavBar from "../../Components/NavBar/NavBar";
 
 function PrivateRoute(props) {
   const token = useSelector((state) => state.auth.token);
@@ -11,7 +10,7 @@ function PrivateRoute(props) {
       <div>
           {props.role === user.role || !props.role ? props.component : null}
           <Footer email={user.email} />
-      </div>
+      </div> 
     );
   } else {
     return <Navigate to={"/signin"} replace />;

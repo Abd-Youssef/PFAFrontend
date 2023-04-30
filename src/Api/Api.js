@@ -1,4 +1,4 @@
-import { apiUrl , headers ,headersFormData} from "../Config/config";
+import { apiUrl , headers } from "../Config/config";
 import STORE from "../Redux/Store";
 const getToken=()=>{
 
@@ -103,7 +103,7 @@ const addDoctor= async (body)=>{
         body: body,
         headers:{
             ...headers,
-            "Authorization":"Bearer "+getToken(),
+            "Authorization":"Bearer "+getToken(), 
         }    
       })
         return response.json();
