@@ -12,18 +12,18 @@ function HeartDiseasePredictionPg2() {
   const form = useSelector((state) => state.formHeart);
   const [error, seterror] = useState();
   console.log("form",form);
-  // const [state, setState] = useState({
-  //   sex: form.data["sex"],
-  //   age: form.data["age"],
-  //   smooker: form.data["smooker"],
-  //   nbCigerette: form.data["nbCigerette"],
-  // });
   const [state, setState] = useState({
-    sex: form.data["sex"] ? form.data["sex"] : "",
-    age: form.data["age"] ? form.data["age"] : "",
-    smooker: form.data["smooker"] ? form.data["smooker"] : "",
-    nbCigerette: form.data["nbCigerette"] ? form.data["nbCigerette"] : "",
+    sex: form.data["sex"],
+    age: form.data["age"],
+    smooker: form.data["smooker"],
+    nbCigerette: form.data["nbCigerette"],
   });
+  // const [state, setState] = useState({
+  //   sex: form.data["sex"] ? form.data["sex"] : "",
+  //   age: form.data["age"] ? form.data["age"] : "",
+  //   smooker: form.data["smooker"] ? form.data["smooker"] : "",
+  //   nbCigerette: form.data["nbCigerette"] ? form.data["nbCigerette"] : "",
+  // });
   
   const onChange = (e, key) => {
     setState({
@@ -34,10 +34,10 @@ function HeartDiseasePredictionPg2() {
   };
   const next = () => {
     if (state["age"] && state["sex"] && state["smooker"]) {
-      if (state["smooker"] === 0) {
+      if (state["smooker"] === "0") {
         dispatch(updateData("nbCigerette", "0"));
       } else {
-        if (state["smooker"] === 1 && state["nbCigerette"]) {
+        if (state["smooker"] === "1" && state["nbCigerette"]) {
           navigate("/HeartDiseasePrediction/2");
         } else {
           seterror("Fill in all the fields");
@@ -84,7 +84,7 @@ function HeartDiseasePredictionPg2() {
               <div className="flex justify-evenly w-1/2   ">
                 <div
                   className={
-                    state.sex && state.sex === 0
+                    state.sex && state.sex === "0"
                       ? "flex rounded-lg w-1/3 h-12  md:w-1/4 md:h-12 md:text-xl  text-pink-400  ring-2 font-semibold ring-pink-400"
                       : "flex rounded-lg w-1/3 h-12 md:w-1/4 md:h-12 md:text-xl  font-normal text-blue-1 hover:text-pink-400 border-2 hover:ring-2 hover:font-semibold ring-pink-400"
                   }
@@ -108,7 +108,7 @@ function HeartDiseasePredictionPg2() {
                 </div>
                 <div
                   className={
-                    state.sex && state.sex === 1
+                    state.sex && state.sex === "1"
                       ? "flex rounded-lg w-1/3 h-12 items-center md:w-1/4 md:h-12 md:text-xl  text-blue-700 ring-2 font-semibold  ring-blue-700"
                       : "flex rounded-lg w-1/3 h-12 md:w-1/4 md:h-12 md:text-xl font-normal text-blue-1 hover:text-blue-700  border-2 hover:ring-2 hover:font-semibold  ring-blue-700"
                   }
@@ -152,7 +152,7 @@ function HeartDiseasePredictionPg2() {
               <div className="flex justify-evenly w-1/2   ">
                 <div
                   className={
-                    state.smooker && state.smooker === 1
+                    state.smooker && state.smooker === "1"
                       ? "flex rounded-lg w-1/3 h-12  md:w-1/4 md:h-12 md:text-xl  text-green-600 ring-2 font-semibold  ring-green-600"
                       : "flex rounded-lg w-1/3 h-12  md:w-1/4 md:h-12 md:text-xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
@@ -175,7 +175,7 @@ function HeartDiseasePredictionPg2() {
                 </div>
                 <div
                   className={
-                    state.smooker && state.smooker === 0
+                    state.smooker && state.smooker === "0"
                       ? "flex rounded-lg w-1/3 h-12  md:w-1/4 md:h-12 md:text-xl  text-red-600  ring-2 font-semibold ring-red-600"
                       : "flex rounded-lg w-1/3 h-12  md:w-1/4 md:h-12 md:text-xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
@@ -199,7 +199,7 @@ function HeartDiseasePredictionPg2() {
                 </div>
               </div>
             </div>
-            {state.smooker === 1 && (
+            {state.smooker === "1" && (
               <div className="flex w-full p-4 md:p-8 justify-between items-center">
               <h1 className="text-base w-1/2 md:w-1/3 md:text-xl font-normal  text-blue-1  ">
                   How many cigarettes per day ?

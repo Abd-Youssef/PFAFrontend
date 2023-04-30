@@ -31,10 +31,12 @@ function HeartDiseasePredictionPg5() {
         glucose_levels: parseInt(form.data["glucose"]),
       })
     );
+    console.log("response",response);
     if (response.status === 201) {
       setPrediction(response.prediction);
       dispatch(clearData());
       setIsLoading(false);
+      
     } 
     // else {
     //   seterror(response.message);

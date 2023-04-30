@@ -43,7 +43,7 @@ const HeartDiseasePredictionReducer = (
           BMI: "",
           heartRate: "",
           glucose: "",
-        },
+        }
       };
 
     default:
