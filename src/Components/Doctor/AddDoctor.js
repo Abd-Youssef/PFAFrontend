@@ -1,15 +1,10 @@
 import { useState } from "react";
-import { addDoctor, signIn } from "../../Api/Api";
-import { Link, useNavigate } from "react-router-dom";
+import { addDoctor } from "../../Api/Api";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
-import { useDispatch } from "react-redux";
-import { SetUser } from "../../Redux/Action";
-import logoPng from "../../Assets/logo.png";
 import SelectMenus from "../DropDown/SelectMenus";
 
 function AddDoctor(props) {
-  const Dispatch = useDispatch();
   const [state, setState] = useState({
     name: "",
     speciality: "",
@@ -17,10 +12,9 @@ function AddDoctor(props) {
     phoneNumber: "",
   });
   const [error, seterror] = useState();
-  const navigate = useNavigate();
 
   const onChange = (e, key) => {
-    setState({
+    setState({ 
       ...state,
       [key]: e.target.value,
     });
@@ -44,7 +38,6 @@ function AddDoctor(props) {
   const onChangeCategory = (e) => {
     setstateCategorie(e.target.value);
   };
-  const [selectedOption, setSelectedOption] = useState("Rien");
   const handleSpecialityChange = (value) => {
     setState({
       ...state,
@@ -135,7 +128,7 @@ function AddDoctor(props) {
               <label for="radio2" className="w-full py-4 ml-2 text-base font-medium text-gray-900">Speciality exists</label>
             </div>
           </div>
-          {stateCategorie == "New" ? (
+          {stateCategorie === "New" ? (
             <Input
               placeholder={"speciality"}
               onChange={(e) => onChange(e, "speciality")}
@@ -147,7 +140,7 @@ function AddDoctor(props) {
           ) : (
             <></>
           )}
-          {stateCategorie == "Old" &&
+          {stateCategorie === "Old" &&
           <SelectMenus categories={props.categories} onChange={handleSpecialityChange} data={[]}/>
             }
         </div>

@@ -1,14 +1,9 @@
 import { useState } from "react";
-import { addDoctor, signIn, updateDoctor } from "../../Api/Api";
-import { Link, useNavigate } from "react-router-dom";
+import { updateDoctor } from "../../Api/Api";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import { useDispatch } from "react-redux";
-import { SetUser } from "../../Redux/Action";
-import logoPng from "../../Assets/logo.png";
 
 function EditDoctor(props) {
-  const Dispatch = useDispatch();
   const [state, setState] = useState({
     name: props.doctor.name,
     speciality: props.doctor.speciality,
@@ -16,7 +11,6 @@ function EditDoctor(props) {
     phoneNumber: props.doctor.phoneNumber,
   });
   const [error, seterror] = useState();
-  const navigate = useNavigate();
   const onChange = (e, key) => {
     setState({
       ...state,

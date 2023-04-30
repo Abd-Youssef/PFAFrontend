@@ -18,7 +18,7 @@ function DropDown(props) {
           })}
         </p>
         <div className=" md:text-xl font-normal text-justify  text-blue-1 ">
-          {props.servey.result == 0 ? (
+          {props.servey.result === 0 ? (
                     <div className="flex justify-center items-center md:pb-3">
                       <div className="mx-auto flex h-8 w-8 md:h-12 md:w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">
                         <svg
@@ -83,23 +83,23 @@ function DropDown(props) {
         <>
           <div className="md:flex justify-between w-full px-6 md:p-6">
             <p>Age : {props.servey.age}</p>
-            {props.servey.sexe == 1 ? <p>Sexe : Male</p> : <p>Sexe : Female</p>}
+            {props.servey.sexe === 1 ? <p>Sexe : Male</p> : <p>Sexe : Female</p>}
             <p>
               Number of cigarettes per day : {props.servey.cigarettes_per_day}
             </p>
           </div>
           <div className="md:flex justify-between w-full px-6 ">
-            {props.servey.diabetes == 1 ? (
+            {props.servey.diabetes === 1 ? (
               <p>Diabetes : Yes</p>
             ) : (
               <p>Diabetes : No</p>
             )}
-            {props.servey.hypertension_prevalence == 1 ? (
+            {props.servey.hypertension_prevalence === 1 ? (
               <p>Hypertension Prevalence : Yes</p>
             ) : (
               <p>Hypertension Prevalence : No</p>
             )}
-            {props.servey.stroke_prevalence == 1 ? (
+            {props.servey.stroke_prevalence === 1 ? (
               <p>Stroke Prevalence : Yes</p>
             ) : (
               <p>Stroke Prevalence : No</p>
@@ -107,7 +107,7 @@ function DropDown(props) {
           </div>
           <div className="md:flex justify-between w-full px-6 md:p-6">
             <p>Glucose level : {props.servey.glucose_levels}</p>
-            {props.servey.blood_pressure_meds == 1 ? (
+            {props.servey.blood_pressure_meds === 1 ? (
               <p>Blood Pressure Medication : Yes</p>
             ) : (
               <p>Blood Pressure Medication : No</p>

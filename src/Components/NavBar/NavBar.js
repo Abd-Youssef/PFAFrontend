@@ -27,7 +27,7 @@ export default function NavBar() {
           >
             Home
           </Link>
-          {auth.user?.role == "admin" && (
+          {auth.user?.role === "admin" && (
             <Link
               to="/dashboard"
               className="text-lg font-semibold leading-6 text-white hover:text-blue-200"

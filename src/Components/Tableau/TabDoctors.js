@@ -146,7 +146,7 @@ function TabDoctors(props) {
           onChange={handleSpecialityChange}
         />
         <div className="flex items-center pl-8">
-          {props.role == "admin" && (
+          {props.role === "admin" && (
             <Button
               name="Add"
               onClick={() => {
@@ -197,7 +197,7 @@ function TabDoctors(props) {
             <th scope="col" className="px-6 py-3">
               Phone number
             </th>
-            {props.role == "admin" && (
+            {props.role === "admin" && (
               <>
                 <th scope="col" className="px-6 py-3">
                   Edit
@@ -224,7 +224,7 @@ function TabDoctors(props) {
               <td className="px-6 py-5">{el.speciality}</td>
               <td className="px-6 py-5">{el.address}</td>
               <td className="px-6 py-5">{el.phoneNumber}</td>
-              {props.role == "admin" && (
+              {props.role === "admin" && (
                 <>
                   <td className="px-6 py-5">
                     <Button

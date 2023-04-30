@@ -17,13 +17,12 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./Privateroute/PrivateRoute";
 import PublicRoute from "./PublicRoute/PublicRoute";
-import DoctorsPage from "../Pages/DoctorsPage/DoctorsUserPage";
 import DoctorsUserPage from "../Pages/DoctorsPage/DoctorsUserPage";
 import DoctorsAdminPage from "../Pages/DoctorsPage/DoctorsAdminPage";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 function Routes(props) {
-  const [token, setToken] = useState(null);
+  const [token] = useState(null);
   const auth = useSelector((state) => state.auth);
   return (
     <BrowserRouter>
@@ -93,7 +92,7 @@ function Routes(props) {
             />
           }
         />
-        {( auth.user?.role == "admin") ?<Route
+        {( auth.user?.role === "admin") ?<Route
           path="/doctors"
           element={
             <PrivateRoute

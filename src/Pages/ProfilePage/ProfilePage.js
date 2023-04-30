@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import userPng from "../../Assets/user.png";
 import { useSelector } from "react-redux";
@@ -10,13 +9,13 @@ function ProfilePage() {
   const [Serveys, setServeys] = useState([]);
   useEffect(() => {
     getAllServeys();
-  }, []);
+  });
   const getAllServeys = async () => {
     const response = await getAllServey(auth.user._id);
     if (response.status === 200) {
       setServeys(response.data);
     }
-  };
+  }; 
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />

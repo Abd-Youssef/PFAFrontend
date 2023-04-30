@@ -3,7 +3,6 @@ import NavBar from "../../Components/NavBar/NavBar";
 import PieChart from "../../Components/Statistique/PieChart";
 import { allTimeStat, dailyStat, monthlyStat, weeklyStat } from "../../Api/Api";
 import LineChart from "../../Components/Statistique/LineChart";
-import SelectMenus from "../../Components/DropDown/SelectMenus";
 
 function Dashboard() {
   const [DailyStat, setDailyStat] = useState([]);
@@ -41,7 +40,8 @@ function Dashboard() {
       default:
         break;
     }
-  }, [filter]);
+  }, [filter, DailyStat, WeeklyStat, MonthlyStat, AllTimeStat]);
+
   const getdailyStat = async () => {
     const response = await dailyStat(
       JSON.stringify({

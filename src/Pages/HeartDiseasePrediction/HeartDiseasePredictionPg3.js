@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import ErrorNav from "../../Components/Alert/ErrorNav";
-import Error from "../../Components/Alert/ErrorNav";
 import Button from "../../Components/Button/Button";
-import Input from "../../Components/Input/Input";
 import NavBar from "../../Components/NavBar/NavBar";
 import { updateData } from "../../Redux/Action";
 function HeartDiseasePredictionPg3() {
@@ -18,7 +16,7 @@ function HeartDiseasePredictionPg3() {
     prevalentHyp: form.data["prevalentHyp"],
     BPMeds: form.data["BPMeds"],
   });
-  const onChange = (e, key) => {
+  const onChange = (e, key) => { 
     setState({
       ...state,
       [key]: e.target.value,
@@ -73,7 +71,7 @@ function HeartDiseasePredictionPg3() {
               <div className="flex justify-evenly w-2/5   ">
                 <div
                   className={
-                    state.diabetes && state.diabetes == 1
+                    state.diabetes && state.diabetes === 1
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
                       : "flex rounded-lg w-1/3 md:w-1/4  md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
@@ -96,7 +94,7 @@ function HeartDiseasePredictionPg3() {
                 </div>
                 <div
                   className={
-                    state.diabetes && state.diabetes == 0
+                    state.diabetes && state.diabetes === 0
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12  text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12  text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
@@ -127,7 +125,7 @@ function HeartDiseasePredictionPg3() {
               <div className="flex justify-evenly w-2/5   ">
                 <div
                   className={
-                    state.prevalentStroke && state.prevalentStroke == 1
+                    state.prevalentStroke && state.prevalentStroke === 1
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
@@ -150,7 +148,7 @@ function HeartDiseasePredictionPg3() {
                 </div>
                 <div
                   className={
-                    state.prevalentStroke && state.prevalentStroke == 0
+                    state.prevalentStroke && state.prevalentStroke === 0
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
@@ -181,7 +179,7 @@ function HeartDiseasePredictionPg3() {
               <div className="flex justify-evenly w-2/5    ">
                 <div
                   className={
-                    state.prevalentHyp && state.prevalentHyp == 1
+                    state.prevalentHyp && state.prevalentHyp === 1
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
@@ -204,7 +202,7 @@ function HeartDiseasePredictionPg3() {
                 </div>
                 <div
                   className={
-                    state.prevalentHyp && state.prevalentHyp == 0
+                    state.prevalentHyp && state.prevalentHyp === 0
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }
@@ -235,7 +233,7 @@ function HeartDiseasePredictionPg3() {
               <div className="flex justify-evenly w-2/5  ">
                 <div
                   className={
-                    state.BPMeds && state.BPMeds == 1
+                    state.BPMeds && state.BPMeds === 1
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12text-2xl  text-green-600 ring-2 font-semibold  ring-green-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl items-center justify-center font-normal text-blue-1 hover:text-green-600 border-2 hover:ring-2 hover:font-semibold  ring-green-600"
                   }
@@ -258,7 +256,7 @@ function HeartDiseasePredictionPg3() {
                 </div>
                 <div
                   className={
-                    state.BPMeds && state.BPMeds == 0
+                    state.BPMeds && state.BPMeds === 0
                       ? "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl  text-red-600  ring-2 font-semibold ring-red-600"
                       : "flex rounded-lg w-1/3 md:w-1/4 md:h-12 text-2xl font-normal text-blue-1 hover:text-red-600 border-2 hover:ring-2 hover:font-semibold ring-red-600"
                   }

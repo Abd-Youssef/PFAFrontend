@@ -31,7 +31,7 @@ export default function Footer(props) {
       }
     }
   };
-  const [PopUp, setPopUp] = useState(false);
+  const [PopUp, setPopUp] = useState(false); 
   return (
     <footer className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       {PopUp && (
@@ -123,8 +123,7 @@ export default function Footer(props) {
             </span>
           </div>
           <div className="flex mt-4 items-center space-x-8 ">
-            <a
-              href="#"
+            <Link 
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -140,8 +139,8 @@ export default function Footer(props) {
                 />
               </svg>
               <span className="sr-only">Facebook page</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
@@ -158,8 +157,8 @@ export default function Footer(props) {
                 />
               </svg>
               <span className="sr-only">Instagram page</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
@@ -176,8 +175,8 @@ export default function Footer(props) {
                 />
               </svg>
               <span className="sr-only">GitHub account</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
@@ -194,7 +193,7 @@ export default function Footer(props) {
                 />
               </svg>
               <span className="sr-only">GitHub account</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

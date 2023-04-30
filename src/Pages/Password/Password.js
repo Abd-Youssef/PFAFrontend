@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { changePassword } from "../../Api/Api";
 import logoPng from "../../Assets/logo.png";
 import Button from "../../Components/Button/Button";
@@ -100,7 +100,7 @@ function Password() {
                 className="h-8 w-8 text-red-600 "
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                stroke-width="1.5" 
                 stroke="currentColor"
                 aria-hidden="true"
               >

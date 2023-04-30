@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { createServey } from "../../Api/Api";
-import Button from "../../Components/Button/Button";
 import NavBar from "../../Components/NavBar/NavBar";
 import { clearData } from "../../Redux/Action";
 
@@ -11,7 +10,7 @@ function HeartDiseasePredictionPg5() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const form = useSelector((state) => state.formHeart);
-  const [error, seterror] = useState();
+  // const [error, seterror] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [prediction, setPrediction] = useState(null);
   const onSubmit = async () => {
@@ -36,42 +35,43 @@ function HeartDiseasePredictionPg5() {
       setPrediction(response.prediction);
       dispatch(clearData());
       setIsLoading(false);
-    } else {
-      seterror(response.message);
-    }
+    } 
+    // else {
+    //   seterror(response.message);
+    // }
   };
   const shouldLog = useRef(true);
   useEffect(() => {
-      if (shouldLog.current) {
-        shouldLog.current = false;
-        if (
-          form.data["age"] &&
-          form.data["sex"] &&
-          form.data["smooker"] &&
-          form.data["nbCigerette"] &&
-          form.data["diabetes"] &&
-          form.data["prevalentStroke"] &&
-          form.data["BPMeds"] &&
-          form.data["prevalentHyp"] &&
-          form.data["totChol"] &&
-          form.data["sysBP"] &&
-          form.data["BMI"] &&
-          form.data["heartRate"] &&
-          form.data["glucose"]
-        ) {
-          onSubmit();
-        } else {
-          navigate("/HeartDiseasePrediction");
-        }
+    if (shouldLog.current) {
+      shouldLog.current = false;
+      if (
+        form.data["age"] &&
+        form.data["sex"] &&
+        form.data["smooker"] &&
+        form.data["nbCigerette"] &&
+        form.data["diabetes"] &&
+        form.data["prevalentStroke"] &&
+        form.data["BPMeds"] &&
+        form.data["prevalentHyp"] &&
+        form.data["totChol"] &&
+        form.data["sysBP"] &&
+        form.data["BMI"] &&
+        form.data["heartRate"] &&
+        form.data["glucose"]
+      ) {
+        onSubmit();
+      } else {
+        navigate("/HeartDiseasePrediction");
+      }
     }
-  }, []);
+  });
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
       <div className="md:flex justify-center w-full py-5 md:py-0 bg-blue-50">
         <div className="p-6 md:flex justify-between md:w-3/5  md:m-20 ">
           <div className=" md:w-1/5  ">
-          <ul className="flex pb-6  md:flex-col md:ml-6 ">
+            <ul className="flex pb-6  md:flex-col md:ml-6 ">
               <Link
                 className="p-2 md:pl-3 text-lg font-semibold border-b-4 md:border-l-4 md:border-b-0 border-green-700 text-blue-1 cursor-pointer"
                 to="/HeartDiseasePrediction"
@@ -118,7 +118,7 @@ function HeartDiseasePredictionPg5() {
               </div>
             ) : (
               <div className=" flex items-center justify-center p-10">
-                {prediction == 0 ? (
+                {prediction === 0 ? (
                   <div className="w-full  items-center justify-center overflow-hidden text-center p-8  ">
                     <div className="flex justify-center pb-3">
                       <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">

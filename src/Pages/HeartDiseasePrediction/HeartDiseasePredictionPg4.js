@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { createServey } from "../../Api/Api";
 import ErrorNav from "../../Components/Alert/ErrorNav";
-import Error from "../../Components/Alert/ErrorNav";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import NavBar from "../../Components/NavBar/NavBar";
@@ -11,7 +9,6 @@ import { updateData } from "../../Redux/Action";
 function HeartDiseasePredictionPg3() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
   const form = useSelector((state) => state.formHeart);
   const [error, seterror] = useState();
   const [state, setState] = useState({
@@ -33,7 +30,7 @@ function HeartDiseasePredictionPg3() {
       state["totChol"] &&
       state["sysBP"] &&
       state["BMI"] &&
-      state["heartRate"] &&
+      state["heartRate"] && 
       state["glucose"]
     ) {
       navigate("/HeartDiseasePrediction/Results");
