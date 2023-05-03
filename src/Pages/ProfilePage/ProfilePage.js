@@ -7,15 +7,16 @@ import DropDown from "../../Components/DropDown/DropDown";
 function ProfilePage() {
   const auth = useSelector((state) => state.auth);
   const [Serveys, setServeys] = useState([]);
+ 
   useEffect(() => {
+    const getAllServeys = async () => {
+      const response = await getAllServey(auth.user._id);
+      if (response.status === 200) {
+        setServeys(response.data);
+      }
+    };
     getAllServeys();
-  });
-  const getAllServeys = async () => {
-    const response = await getAllServey(auth.user._id);
-    if (response.status === 200) {
-      setServeys(response.data);
-    }
-  }; 
+  }, [auth.user._id]);
   return (
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />

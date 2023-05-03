@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { createServey } from "../../Api/Api";
+import { createServey, getPredection } from "../../Api/Api";
 import NavBar from "../../Components/NavBar/NavBar";
 import { clearData } from "../../Redux/Action";
 
@@ -13,10 +13,10 @@ function HeartDiseasePredictionPg5() {
   // const [error, seterror] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [prediction, setPrediction] = useState(null);
-  const onSubmit = async () => {
-    const response = await createServey(
+  const onSubmit =   async () => {
+    
+    const response = await getPredection(
       JSON.stringify({
-        userid: auth.user._id,
         sexe: parseInt(form.data["sex"]),
         age: parseInt(form.data["age"]),
         cigarettes_per_day: parseInt(form.data["nbCigerette"]),
@@ -32,15 +32,30 @@ function HeartDiseasePredictionPg5() {
       })
     );
     console.log("response",response);
-    if (response.status === 201) {
-      setPrediction(response.prediction);
+    setPrediction(response["prediction"]);
+    const response2 = await createServey(
+      JSON.stringify({
+        userid: auth.user._id,
+        sexe: parseInt(form.data["sex"]),
+        age: parseInt(form.data["age"]),
+        cigarettes_per_day: parseInt(form.data["nbCigerette"]),
+        blood_pressure_meds: parseInt(form.data["BPMeds"]),
+        stroke_prevalence: parseInt(form.data["prevalentStroke"]),
+        hypertension_prevalence: parseInt(form.data["prevalentHyp"]),
+        diabetes: parseInt(form.data["diabetes"]),
+        cholesterol: parseInt(form.data["totChol"]),
+        systolic_blood_pressure: parseInt(form.data["sysBP"]),
+        bmi: parseInt(form.data["BMI"]),
+        heart_beat: parseInt(form.data["heartRate"]),
+        glucose_levels: parseInt(form.data["glucose"]),
+        result: parseInt(response["prediction"]),
+      })
+    );
+    if (response2.status === 201) {
       dispatch(clearData());
       setIsLoading(false);
       
     } 
-    // else {
-    //   seterror(response.message);
-    // }
   };
   const shouldLog = useRef(true);
   useEffect(() => {
@@ -120,7 +135,7 @@ function HeartDiseasePredictionPg5() {
               </div>
             ) : (
               <div className=" flex items-center justify-center p-10">
-                {prediction === 0 ? (
+                {prediction === "0" ? (
                   <div className="w-full  items-center justify-center overflow-hidden text-center p-8  ">
                     <div className="flex justify-center pb-3">
                       <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">

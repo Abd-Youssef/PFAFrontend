@@ -18,7 +18,7 @@ function DropDown(props) {
           })}
         </p>
         <div className=" md:text-xl font-normal text-justify  text-blue-1 ">
-          {props.servey.result === "0" ? (
+          {props.servey.result === 0 ? (
                     <div className="flex justify-center items-center md:pb-3">
                       <div className="mx-auto flex h-8 w-8 md:h-12 md:w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:h-14 sm:w-14">
                         <svg
