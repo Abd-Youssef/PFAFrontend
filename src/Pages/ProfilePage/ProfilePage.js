@@ -7,7 +7,7 @@ import DropDown from "../../Components/DropDown/DropDown";
 function ProfilePage() {
   const auth = useSelector((state) => state.auth);
   const [Serveys, setServeys] = useState([]);
- 
+
   useEffect(() => {
     const getAllServeys = async () => {
       const response = await getAllServey(auth.user._id);
@@ -21,7 +21,9 @@ function ProfilePage() {
     <div className="bg-cover bg-center bg-homePage  w-full bg-blue-1">
       <NavBar />
       <div className="flex flex-col justify-center w-full px-2 md:px-20  bg-blue-50">
-        <p className="text-3xl text-start pt-6 md:pt-10 text-blue-1 ">Profile :</p>
+        <p className="text-3xl text-start pt-6 md:pt-10 text-blue-1 ">
+          Profile :
+        </p>
         <div className="md:flex justify-between py-6  ">
           <div className="md:w-96 md:h-72 mb-5 shadow-2xl rounded-xl bg-white">
             <div className="flex w-full justify-center py-6   ">
@@ -41,13 +43,16 @@ function ProfilePage() {
           <div className="flex flex-col  md:w-2/3  justify-between rounded-xl shadow-2xl bg-white">
             <div className="w-full p-3 md:p-10 justify-between">
               <h1 className=" text-2xl  font-semibold leading-normal text-blue-1 pb-6 ">
-              Prediction History 
+                Prediction History
               </h1>
-              {Serveys.map((el, index) => (
-                <div className="w-full pb-6" key={index}>
-                  <DropDown servey={el}/>
-                </div>
-              ))}
+              <div className="flex flex-col-reverse " >
+                {Serveys
+                  .map((el, index) => (
+                    <div className="w-full pb-6" key={Serveys.length - index}>
+                      <DropDown servey={el} />
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
         </div>
