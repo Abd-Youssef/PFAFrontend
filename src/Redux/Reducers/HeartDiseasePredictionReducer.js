@@ -47,7 +47,7 @@ const HeartDiseasePredictionReducer = (
       };
 
     default:
-      return state;
+      return {data: state};
   }
 };
 export default HeartDiseasePredictionReducer;
